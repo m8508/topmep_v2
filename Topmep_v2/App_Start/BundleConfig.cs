@@ -21,11 +21,13 @@ namespace Topmep_v2
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
-                      "~/Scripts/bootstrap.bundle.js"));
+                      "~/Scripts/bootstrap.bundle.js",
+                      "~/Scripts/sb-admin-2.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap*",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/sb-admin-2.css"));
         }
     }
 }
