@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,14 +9,19 @@ namespace Topmep_v2.Controllers
 {
     public class LoginController : Controller
     {
+        private static Logger log = NLog.LogManager.GetCurrentClassLogger();
         // GET: Login
         public ActionResult Index()
         {
             return View();
         }
-        public ActionResult Login()
+
+        [HttpPost]
+        public ActionResult Login(FormCollection f)
         {
-            return View("Index");
+            log.Info(f["userid"] +" login by "+ f["password"]);
+            return RedirectToAction("Index", "Home", null);
+            //return View("Index");
         }
     }
 }

@@ -26,7 +26,6 @@ namespace Topmep_v2
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap*",
-                      "~/Content/site.css",
                       "~/Content/sb-admin-2.css"));
         }
     }
