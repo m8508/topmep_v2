@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 組件的一般資訊會透過將設定 
 // 控制。變更這些屬性值可修改與組件關聯的
 // 資訊。
-[assembly: AssemblyTitle("Topmep_v2")]
+[assembly: AssemblyTitle("Topmep")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Topmep_v2")]
+[assembly: AssemblyProduct("Topmep")]
 [assembly: AssemblyCopyright("Copyright (C)  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

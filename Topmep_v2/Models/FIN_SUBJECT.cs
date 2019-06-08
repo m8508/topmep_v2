@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Topmep_v2.Models
+namespace Topmep.Models
 {
     using System;
     using System.Collections.Generic;

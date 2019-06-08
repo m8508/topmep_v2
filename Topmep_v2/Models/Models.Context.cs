@@ -7,18 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Topmep_v2.Models
+namespace Topmep.Models
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using System.Data.Entity.Core.Objects;
-    using System.Linq;
     
-    public partial class topmepEntities : DbContext
+    public partial class TopmepEntities : DbContext
     {
-        public topmepEntities()
-            : base("name=topmepEntities")
+        public TopmepEntities()
+            : base("name=TopmepEntities")
         {
         }
     
@@ -110,14 +108,5 @@ namespace Topmep_v2.Models
         public virtual DbSet<State> State { get; set; }
         public virtual DbSet<vw_MAP_FW> vw_MAP_FW { get; set; }
         public virtual DbSet<vw_MAP_PLU> vw_MAP_PLU { get; set; }
-    
-        public virtual int PRC_DEL_PROJECT(string projectId)
-        {
-            var projectIdParameter = projectId != null ?
-                new ObjectParameter("projectId", projectId) :
-                new ObjectParameter("projectId", typeof(string));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("PRC_DEL_PROJECT", projectIdParameter);
-        }
     }
 }

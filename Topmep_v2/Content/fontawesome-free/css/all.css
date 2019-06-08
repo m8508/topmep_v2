@@ -551,10 +551,10 @@ readers do not read off random characters that represent icons */
 .fa-blog:before {
   content: "\f781"; }
 
-.fa-blogger:before {
+.fa-blog:before {
   content: "\f37c"; }
 
-.fa-blogger-b:before {
+.fa-blog-b:before {
   content: "\f37d"; }
 
 .fa-bluetooth:before {

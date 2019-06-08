@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace Topmep_v2
+namespace Topmep
 {
     public class MvcApplication : System.Web.HttpApplication
     {

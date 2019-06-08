@@ -92,7 +92,7 @@
   </xs:complexType>
   <xs:complexType name="NLogRules">
     <xs:sequence minOccurs="0" maxOccurs="unbounded">
-      <xs:element name="logger" type="NLogLoggerRule" />
+      <xs:element name="log" type="NLoglogRule" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="NLogExtensions">
@@ -117,13 +117,13 @@
       </xs:annotation>
     </xs:attribute>
   </xs:complexType>
-  <xs:complexType name="NLogLoggerRule">
+  <xs:complexType name="NLoglogRule">
     <xs:choice minOccurs="0" maxOccurs="unbounded">
       <xs:element name="filters" type="NLogFilters" />
     </xs:choice>
     <xs:attribute name="name" use="optional">
       <xs:annotation>
-        <xs:documentation>Name of the logger. May include  wildcard characters ('*' or '?').</xs:documentation>
+        <xs:documentation>Name of the log. May include  wildcard characters ('*' or '?').</xs:documentation>
       </xs:annotation>
     </xs:attribute>
     <xs:attribute name="levels" type="NLogLevelList">
@@ -300,7 +300,7 @@
         </xs:attribute>
         <xs:attribute name="forceLockingQueue" type="xs:boolean">
           <xs:annotation>
-            <xs:documentation>Whether to use the locking queue, instead of a lock-free concurrent queue The locking queue is less concurrent when many logger threads, but reduces memory allocation</xs:documentation>
+            <xs:documentation>Whether to use the locking queue, instead of a lock-free concurrent queue The locking queue is less concurrent when many log threads, but reduces memory allocation</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="fullBatchSizeWriteLimit" type="xs:integer">
@@ -442,7 +442,7 @@
           <xs:element name="parameter" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.NLogViewerParameterInfo" />
           <xs:element name="ndlcItemSeparator" minOccurs="0" maxOccurs="1" type="xs:string" />
           <xs:element name="includeSourceInfo" minOccurs="0" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="loggerName" minOccurs="0" maxOccurs="1" type="Layout" />
+          <xs:element name="logName" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="includeNLogData" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="includeNdlc" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="includeNdc" minOccurs="0" maxOccurs="1" type="xs:boolean" />
@@ -539,9 +539,9 @@
             <xs:documentation>Indicates whether to include source info (file name and line number) in the information sent over the network.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="loggerName" type="SimpleLayoutAttribute">
+        <xs:attribute name="logName" type="SimpleLayoutAttribute">
           <xs:annotation>
-            <xs:documentation>Renderer for log4j:event logger-xml-attribute (Default ${logger})</xs:documentation>
+            <xs:documentation>Renderer for log4j:event log-xml-attribute (Default ${log})</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="includeNLogData" type="xs:boolean">
@@ -1439,7 +1439,7 @@
         </xs:attribute>
         <xs:attribute name="openFileCacheSize" type="xs:integer">
           <xs:annotation>
-            <xs:documentation>Number of files to be kept open. Setting this to a higher value may improve performance in a situation where a single File target is writing to many files (such as splitting by level or by logger).</xs:documentation>
+            <xs:documentation>Number of files to be kept open. Setting this to a higher value may improve performance in a situation where a single File target is writing to many files (such as splitting by level or by log).</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="keepFileOpen" type="xs:boolean">
@@ -2140,7 +2140,7 @@
           <xs:element name="parameter" minOccurs="0" maxOccurs="unbounded" type="NLog.Targets.NLogViewerParameterInfo" />
           <xs:element name="ndlcItemSeparator" minOccurs="0" maxOccurs="1" type="xs:string" />
           <xs:element name="includeSourceInfo" minOccurs="0" maxOccurs="1" type="xs:boolean" />
-          <xs:element name="loggerName" minOccurs="0" maxOccurs="1" type="Layout" />
+          <xs:element name="logName" minOccurs="0" maxOccurs="1" type="Layout" />
           <xs:element name="includeNLogData" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="includeNdlc" minOccurs="0" maxOccurs="1" type="xs:boolean" />
           <xs:element name="includeNdc" minOccurs="0" maxOccurs="1" type="xs:boolean" />
@@ -2237,9 +2237,9 @@
             <xs:documentation>Indicates whether to include source info (file name and line number) in the information sent over the network.</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="loggerName" type="SimpleLayoutAttribute">
+        <xs:attribute name="logName" type="SimpleLayoutAttribute">
           <xs:annotation>
-            <xs:documentation>Renderer for log4j:event logger-xml-attribute (Default ${logger})</xs:documentation>
+            <xs:documentation>Renderer for log4j:event log-xml-attribute (Default ${log})</xs:documentation>
           </xs:annotation>
         </xs:attribute>
         <xs:attribute name="includeNLogData" type="xs:boolean">

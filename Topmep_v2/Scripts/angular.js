@@ -21179,7 +21179,7 @@ function $SnifferProvider() {
  * A `TaskTracker` can keep track of pending tasks (grouped by type) and can notify interested
  * parties when all pending tasks (or tasks of a specific type) have been completed.
  *
- * @param {$log} log - A logger instance (such as `$log`). Used to log error during callback
+ * @param {$log} log - A log instance (such as `$log`). Used to log error during callback
  *     execution.
  *
  * @this

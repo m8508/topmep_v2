@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace Topmep_v2
+namespace Topmep
 {
     public class BundleConfig
     {

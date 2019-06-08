@@ -47,21 +47,156 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="commons-collections4-4.1, Version=7.8.3.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-common.7.8.3\lib\commons-collections4-4.1.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Hangfire.Core, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.Core.1.7.3\lib\net46\Hangfire.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Hangfire.SqlServer.1.7.3\lib\net45\Hangfire.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.0.999, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.0.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.AWT.WinForms, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.AWT.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Beans, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Beans.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Charsets, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Charsets.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Cldrdata, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Cldrdata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Corba, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Corba.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Jdbc, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Jdbc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Localedata, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Localedata.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Management, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Misc, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Naming, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Naming.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Nashorn, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Nashorn.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Remoting, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Remoting.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Security, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Tools, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.API, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.XML.API.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Bind, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.XML.Bind.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Crypto, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.XML.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Parse, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.XML.Parse.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.Transform, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.XML.Transform.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.WebServices, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.XML.WebServices.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.XML.XPath, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.OpenJDK.XML.XPath.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Reflection, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime.JNI, Version=8.0.5449.1, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-ikvm.7.8.3\lib\IKVM.Runtime.JNI.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="mpxj, Version=7.8.3.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj.7.8.3\lib\mpxj.dll</HintPath>
+    </Reference>
+    <Reference Include="MpxjUtilities, Version=7.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-common.7.8.3\lib\MpxjUtilities.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
       <HintPath>..\packages\NLog.4.6.4\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="poi-3.17, Version=7.8.3.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-common.7.8.3\lib\poi-3.17.dll</HintPath>
+    </Reference>
+    <Reference Include="rtfparserkit-1.13.0, Version=7.8.3.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-common.7.8.3\lib\rtfparserkit-1.13.0.dll</HintPath>
+    </Reference>
+    <Reference Include="sqlite-jdbc-3.8.10.1, Version=7.8.3.0, Culture=neutral, PublicKeyToken=8783d630753e2b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\net.sf.mpxj-common.7.8.3\lib\sqlite-jdbc-3.8.10.1.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -135,285 +270,313 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BO\AccountViewModels.cs" />
+    <Compile Include="BO\BO4CashFlow.cs" />
+    <Compile Include="BO\BO4WorkflowForm.cs" />
+    <Compile Include="BO\BOExtentionModels.cs" />
+    <Compile Include="BO\BusinessObject4Expense.cs" />
+    <Compile Include="BO\BusinessObjectModels.cs" />
+    <Compile Include="BO\Model4Estimation.cs" />
+    <Compile Include="BO\PivotDataModel.cs" />
+    <Compile Include="BO\PurchaseBO.cs" />
+    <Compile Include="BO\UserLoginInfo.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AggregatedCounter.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Counter.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ENT_DEPARTMENT.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FIN_BANK_ACCOUNT.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FIN_BANK_LOAN.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FIN_EXPENSE_BUDGET.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FIN_EXPENSE_FORM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FIN_EXPENSE_ITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FIN_LOAN_TRANACTION.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FIN_SUBJECT.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Hash.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Job.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\JobParameter.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\JobQueue.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\List.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Models.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Models.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ACCOUNT.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_BUDGET.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_CONTRACT_PROCESS.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_COSTCHANGE_FORM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_COSTCHANGE_ITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_DALIY_REPORT.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_DR_ITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_DR_NOTE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_DR_TASK.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_DR_TEMPWORK.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_DR_WORKER.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ESTIMATION2PURCHASE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ESTIMATION_FORM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ESTIMATION_HOLDPAYMENT.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ESTIMATION_INVOICE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ESTIMATION_ITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ESTIMATION_PAYMENT_TRANSFER.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_INDIRECT_COST.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_INVOICE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ITEM2_SUP_INQUIRY.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_ITEM_DELIVERY.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_OTHER_PAYMENT.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_PAYMENT_TERMS.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_PURCHASE_REQUISITION.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_PURCHASE_REQUISITION_ITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_SITE_BUDGET.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_SUP_INQUIRY.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_SUP_INQUIRY_ITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_TASK.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_TASK2MAPITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_TASK_DONE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\PLAN_VALUATION_FORM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\REF_TYPE_MAIN.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\REF_TYPE_SUB.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Schema.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Server.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Set.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\State.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SYS_FUNCTION.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SYS_KEY_SERIAL.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SYS_MESSAGE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SYS_PARA.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SYS_PRIVILEGE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SYS_ROLE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SYS_USER.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_FILE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_MAP_DEVICE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_MAP_FP.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_MAP_FW.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_MAP_LCP.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_MAP_PEP.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_MAP_PLU.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_PROJECT.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_PROJECT_FORM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_PROJECT_FORM_ITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_PROJECT_ITEM.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_SUPPLIER.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_SUP_CONTACT_INFO.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_SUP_MATERIAL_RELATION.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_TASKASSIGN.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TND_WAGE.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Topmep.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Topmep.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Topmep.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Topmep.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Topmep.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Topmep.edmx</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_MAP_FW.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\vw_MAP_PLU.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WF_PORCESS_TASK.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WF_PROCESS.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WF_PROCESS_ACTIVITY.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\WF_PROCESS_REQUEST.cs">
-      <DependentUpon>Topmep.tt</DependentUpon>
+      <DependentUpon>Models.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BackgroundService.cs" />
+    <Compile Include="Service\Context4Budget.cs" />
+    <Compile Include="Service\ContextDeptService.cs" />
+    <Compile Include="Service\ContextService.cs" />
+    <Compile Include="Service\ContextService4BankInfo.cs" />
+    <Compile Include="Service\ContextService4CostChange.cs" />
+    <Compile Include="Service\ContextService4po.cs" />
+    <Compile Include="Service\ContextService4System.cs" />
+    <Compile Include="Service\EMailService.cs" />
+    <Compile Include="Service\EstimationService.cs" />
+    <Compile Include="Service\FileSystmeService.cs" />
+    <Compile Include="Service\OfficeProjectService.cs" />
+    <Compile Include="Service\poi4CostChangeService.cs" />
+    <Compile Include="Service\PoiService.cs" />
+    <Compile Include="Service\PoiService4ProjectTask.cs" />
+    <Compile Include="Service\PoiSrevice4DailyReport.cs" />
+    <Compile Include="Service\PoiSrevice4Payment.cs" />
+    <Compile Include="Service\PoiSrevice4po.cs" />
+    <Compile Include="Service\ProjectPlanService.cs" />
+    <Compile Include="Service\ReportContextService.cs" />
+    <Compile Include="Service\UIComponetService.cs" />
+    <Compile Include="Service\UtilService.cs" />
+    <Compile Include="Service\WorkFlowService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-grid.css" />
@@ -1977,15 +2140,20 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\Topmep.Context.tt">
+    <Content Include="images\child.jpg" />
+    <Content Include="images\engineer.jpg" />
+    <Content Include="images\login.jpg" />
+    <Content Include="images\people-icon.png" />
+    <Content Include="images\projectmanage.jpg" />
+    <Content Include="Models\Models.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Topmep.edmx</DependentUpon>
-      <LastGenOutput>Topmep.Context.cs</LastGenOutput>
+      <DependentUpon>Models.edmx</DependentUpon>
+      <LastGenOutput>Models.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Topmep.tt">
+    <Content Include="Models\Models.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Topmep.edmx</DependentUpon>
-      <LastGenOutput>Topmep.cs</LastGenOutput>
+      <DependentUpon>Models.edmx</DependentUpon>
+      <LastGenOutput>Models.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
@@ -2035,13 +2203,6 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <EntityDeploy Include="Models\Topmep.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Topmep.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Topmep.edmx.diagram">
-      <DependentUpon>Topmep.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\errors.json" />
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="Scripts\angular-touch.min.js.map" />
@@ -2108,6 +2269,13 @@
     <Content Include="Content\fontawesome-free\webfonts\fa-solid-900.ttf" />
     <Content Include="Content\fontawesome-free\webfonts\fa-solid-900.woff" />
     <Content Include="Content\fontawesome-free\webfonts\fa-solid-900.woff2" />
+    <EntityDeploy Include="Models\Models.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Models.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Models.edmx.diagram">
+      <DependentUpon>Models.edmx</DependentUpon>
+    </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -2912,7 +3080,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -2958,7 +3125,9 @@
       <ErrorText>此專案參考這部電腦上所缺少的 NuGet 套件。請啟用 NuGet 套件還原，以下載該套件。如需詳細資訊，請參閱 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的檔案是 {0}。</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\net.sf.mpxj-ikvm.7.8.3\build\net.sf.mpxj-ikvm.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\net.sf.mpxj-ikvm.7.8.3\build\net.sf.mpxj-ikvm.targets'))" />
   </Target>
+  <Import Project="..\packages\net.sf.mpxj-ikvm.7.8.3\build\net.sf.mpxj-ikvm.targets" Condition="Exists('..\packages\net.sf.mpxj-ikvm.7.8.3\build\net.sf.mpxj-ikvm.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -5903,7 +5903,7 @@ describe('ngView', function() {
 
     it('should fire $contentLoaded event when content compiled and linked', function() {
       var log = [];
-      var logger = function(name) {
+      var log = function(name) {
         return function() {
           log.push(name);
         };
@@ -5918,9 +5918,9 @@ describe('ngView', function() {
       });
 
       inject(function($templateCache, $rootScope, $location) {
-        $rootScope.$on('$routeChangeStart', logger('$routeChangeStart'));
-        $rootScope.$on('$routeChangeSuccess', logger('$routeChangeSuccess'));
-        $rootScope.$on('$viewContentLoaded', logger('$viewContentLoaded'));
+        $rootScope.$on('$routeChangeStart', log('$routeChangeStart'));
+        $rootScope.$on('$routeChangeSuccess', log('$routeChangeSuccess'));
+        $rootScope.$on('$viewContentLoaded', log('$viewContentLoaded'));
 
         $templateCache.put('tpl.html', [200, '{{value}}', {}]);
         $location.path('/foo');
@@ -6006,7 +6006,7 @@ describe('ngView', function() {
 
       var log = [];
 
-      function logger(msg) {
+      function log(msg) {
         return function() {
           log.push(msg);
         };
@@ -6015,8 +6015,8 @@ describe('ngView', function() {
       function createController(name) {
         return function($scope) {
           log.push('init-' + name);
-          $scope.$on('$destroy', logger('destroy-' + name));
-          $scope.$on('$routeUpdate', logger('route-update'));
+          $scope.$on('$destroy', log('destroy-' + name));
+          $scope.$on('$routeUpdate', log('route-update'));
         };
       }
 
