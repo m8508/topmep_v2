@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -6,10 +7,58 @@ using System.Web;
 
 namespace Topmep.Models
 {
-    //定義針對特定View 所需的資料集合
-    public class BusinessObjectModels
+    public class SYS_MODULE 
     {
+        private static Logger log = NLog.LogManager.GetCurrentClassLogger();
+        public string MODULE_NAME { get; set; }
+        public List<SYS_MODULE> SubModule = null;
+        public List<SYS_FUNCTION> Functions = null;
+        public void AddFunction(SYS_FUNCTION f)
+        {
+            if (f.SUB_MODULE == null || f.SUB_MODULE == "")
+            {
+                AddRealFunction(f);
+            }
+            else
+            {
+                if (SubModule == null)
+                {
+                    SubModule = new List<SYS_MODULE>();
+                }
+                AddSubModule(f);
+            }
+        }
+        public void AddSubModule(SYS_FUNCTION s)
+        {
+            SYS_MODULE sm = null;
+            try
+            {
+                sm = (from submodule in SubModule
+                     where submodule.MODULE_NAME == s.SUB_MODULE
+                     select submodule).First();
+            }
+            catch (Exception ex)
+            {
+                log.Warn(ex.Message + ":" + ex.StackTrace);
+            }
+            if (sm == null)
+            {
+                sm = new SYS_MODULE();
+                sm.MODULE_NAME = s.SUB_MODULE;
+                SubModule.Add(sm);
+            }
+            sm.AddRealFunction(s);
+        }
+        public void AddRealFunction(SYS_FUNCTION f)
+        {
+            if (Functions == null)
+            {
+                Functions = new List<SYS_FUNCTION>();
+            }
+            Functions.Add(f);
+        }
     }
+
     //**備標階段標書基本資料(不包含圖算數量)
     public class TndProjectModels
     {

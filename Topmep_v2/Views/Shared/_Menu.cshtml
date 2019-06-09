@@ -1,0 +1,49 @@
+﻿@using Topmep.Models;
+@using System.Collections.Generic;
+
+@foreach (SYS_MODULE m in Model)
+{
+    <hr class="sidebar-divider my-0">
+    <!--模組名稱-->
+    <div class="sidebar-heading">
+        @m.MODULE_NAME
+    </div>
+    if (m.SubModule != null)
+    {
+        foreach (SYS_MODULE sm in m.SubModule)
+        {
+            @*sub module tag*@
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#@sm.MODULE_NAME" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>@sm.MODULE_NAME</span>
+                </a>
+                <div id="@sm.MODULE_NAME" class="collapse" aria-labelledby="@sm.MODULE_NAME" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">@sm.MODULE_NAME :</h6>
+                        @**@
+                        @foreach (SYS_FUNCTION f in sm.Functions)
+                        {
+                            <a class="collapse-item" href="@f.FUNCTION_URI">@f.FUNCTION_NAME</a>
+                        }
+                        @**@
+                    </div>
+                </div>
+            </li>
+            @**@
+        }
+    }
+    else
+    {
+        foreach (SYS_FUNCTION f in m.Functions)
+        {
+            <li class="nav-item active">
+                <a class="nav-link" href="@f.FUNCTION_URI">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>@f.FUNCTION_NAME</span>
+                </a>
+            </li>
+        }
+    }
+}
+

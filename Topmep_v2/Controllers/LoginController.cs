@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Topmep.Service;
 
 namespace Topmep.Controllers
 {
@@ -20,8 +21,15 @@ namespace Topmep.Controllers
         public ActionResult Login(FormCollection f)
         {
             log.Info(f["userid"] +" login by "+ f["password"]);
-            return RedirectToAction("Index", "Home", null);
-            //return View("Index");
+            UserService service = new UserService();
+            if (service.Login(f["userid"], f["password"]) != null)
+            {
+                Session["LoginUser"] = service.loginUser;
+                Session["HasFunctions"] = service.userPrivilege;
+                return RedirectToAction("Index", "Home", null);
+            }
+            ViewBag.Message = "登入失敗，請聯繫系統管理員!!";
+            return View("Index");
         }
     }
 }

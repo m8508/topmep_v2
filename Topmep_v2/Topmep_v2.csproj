@@ -13,9 +13,9 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Topmep_v2</RootNamespace>
-    <AssemblyName>Topmep_v2</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>Topmep</RootNamespace>
+    <AssemblyName>Topmep</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -27,6 +27,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -200,6 +201,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
@@ -214,8 +216,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
@@ -240,9 +241,7 @@
     <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -260,6 +259,7 @@
     <Reference Include="System.Web.Optimization">
       <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -274,7 +274,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="BO\AccountViewModels.cs" />
     <Compile Include="BO\BO4CashFlow.cs" />
     <Compile Include="BO\BO4WorkflowForm.cs" />
     <Compile Include="BO\BOExtentionModels.cs" />
@@ -283,7 +282,6 @@
     <Compile Include="BO\Model4Estimation.cs" />
     <Compile Include="BO\PivotDataModel.cs" />
     <Compile Include="BO\PurchaseBO.cs" />
-    <Compile Include="BO\UserLoginInfo.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -557,6 +555,7 @@
     <Compile Include="Service\BackgroundService.cs" />
     <Compile Include="Service\Context4Budget.cs" />
     <Compile Include="Service\ContextDeptService.cs" />
+    <Compile Include="Service\ContextService4User.cs" />
     <Compile Include="Service\ContextService.cs" />
     <Compile Include="Service\ContextService4BankInfo.cs" />
     <Compile Include="Service\ContextService4CostChange.cs" />
@@ -3077,6 +3076,27 @@
     <Content Include="Scripts\version.json" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutEmpty.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Template\budget_form.xlsx" />
+    <Content Include="Template\CostChange_Result_v1.xlsx" />
+    <Content Include="Template\CostChange_Template_v1.xlsx" />
+    <Content Include="Template\Cost_Analysis_Template_v1.xlsx" />
+    <Content Include="Template\credit_note_form.xlsx" />
+    <Content Include="Template\dailyReport_Summary.xlsx" />
+    <Content Include="Template\ExpBudgetSummary_form.xlsx" />
+    <Content Include="Template\expense_budget_form.xlsx" />
+    <Content Include="Template\expense_form.xlsx" />
+    <Content Include="Template\expense_form_Bak.xlsx" />
+    <Content Include="Template\Inquiry_form_template.xlsx" />
+    <Content Include="Template\Inquiry_form_templateAll.xlsx" />
+    <Content Include="Template\MaterialDelivery_form.xlsx" />
+    <Content Include="Template\MaterialOrder_form.xlsx" />
+    <Content Include="Template\PlanItem_Template_v1.xlsx" />
+    <Content Include="Template\ProjectItem_Template_v1.xlsx" />
+    <Content Include="Template\SiteExpSummary_form.xlsx" />
+    <Content Include="Template\SiteExpSummary_form_Bk.xlsx" />
+    <Content Include="Template\site_budget_form.xlsx" />
+    <Content Include="Template\wage_form.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
