@@ -96,7 +96,7 @@ namespace Topmep.Service
             m.FROM_ADDRESS = u.EMAIL;
             m.DISPLAY_NAME = u.USER_NAME;
             UserService s = new UserService();
-            List<SYS_USER> lstTarget = s.getProjectUser(pr.PROJECT_ID, "業管");
+            List<SYS_USER> lstTarget = s.GetProjectUser(pr.PROJECT_ID, "業管");
             strTemp.Replace("{1}", pr.PROJECT_ID);
 
             m.MAIL_LIST = getMailList(lstTarget);
@@ -139,7 +139,7 @@ namespace Topmep.Service
             m.DISPLAY_NAME = u.USER_NAME;
             UserService s = new UserService();
             //TODO:加入通知申請人
-            List<SYS_USER> lstTarget = s.getProjectUser(pr.PROJECT_ID, "工地主任");
+            List<SYS_USER> lstTarget = s.GetProjectUser(pr.PROJECT_ID, "工地主任");
             strTemp.Replace("{1}", pr.PROJECT_ID);
 
             m.MAIL_LIST = getMailList(lstTarget);

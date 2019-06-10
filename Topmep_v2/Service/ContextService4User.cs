@@ -23,8 +23,9 @@ namespace Topmep.Service
     {
         private static Logger log = NLog.LogManager.GetCurrentClassLogger();
         public SYS_USER loginUser = null;
-        public List<SYS_MODULE> userPrivilege = null;
-        public List<SYS_USER> getProjectUser(string projectid, string tasktype)
+        public List<SYS_MODULE> userMenu = null;
+        public List<SYS_FUNCTION> userPrivilege = null;
+        public List<SYS_USER> GetProjectUser(string projectid, string tasktype)
         {
             string sql = @"SELECT u.* from TND_TASKASSIGN t ,SYS_USER u
                         where t.USER_ID=u.USER_NAME
@@ -93,13 +94,14 @@ namespace Topmep.Service
                 log.Error(userid + " Not Privilege");
                 throw new Exception("無設定權限，請洽系統管理員!");
             }
-            userPrivilege = new List<SYS_MODULE>();
+            userPrivilege = privilege;
+            userMenu = new List<SYS_MODULE>();
             foreach (SYS_FUNCTION f in privilege)
             {
                 SYS_MODULE m = null;
                 try
                 {
-                    m = (from module in userPrivilege
+                    m = (from module in userMenu
                          where module.MODULE_NAME == f.MODULE_NAME
                          select module).First();
                 }
@@ -111,9 +113,13 @@ namespace Topmep.Service
                 {
                     m = new SYS_MODULE();
                     m.MODULE_NAME = f.MODULE_NAME;
-                    userPrivilege.Add(m);
+                    userMenu.Add(m);
                 }
-                m.AddFunction(f);
+                if (f.ISMENU == "Y")
+                {
+                    m.AddFunction(f);
+                }
+
             }
 
             log.Info("get functions count=" + userPrivilege.Count);

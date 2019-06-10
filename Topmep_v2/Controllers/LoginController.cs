@@ -25,7 +25,8 @@ namespace Topmep.Controllers
             if (service.Login(f["userid"], f["password"]) != null)
             {
                 Session["LoginUser"] = service.loginUser;
-                Session["HasFunctions"] = service.userPrivilege;
+                Session["UserMenu"] = service.userMenu;
+                Session["UserPrivige"] = service.userPrivilege;
                 return RedirectToAction("Index", "Home", null);
             }
             ViewBag.Message = "登入失敗，請聯繫系統管理員!!";

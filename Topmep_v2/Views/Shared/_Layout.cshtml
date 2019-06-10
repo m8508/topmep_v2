@@ -32,9 +32,9 @@
             @{
 
                 SYS_USER loginUser = (SYS_USER)HttpContext.Current.Session["LoginUser"];
-                List<SYS_MODULE>  userPrivilege = (List<SYS_MODULE>)Session["HasFunctions"];
+                List<SYS_MODULE>  userMenu = (List<SYS_MODULE>)Session["UserMenu"];
             }
-            @Html.Partial("_Menu", userPrivilege)
+            @Html.Partial("_Menu", userMenu)
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
             <!-- Sidebar Toggler (Sidebar) -->
