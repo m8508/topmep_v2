@@ -27,7 +27,7 @@ namespace Topmep.Controllers
                 Session["LoginUser"] = service.loginUser;
                 Session["UserMenu"] = service.userMenu;
                 Session["UserPrivige"] = service.userPrivilege;
-                return RedirectToAction("Index", "Home", null);
+                return RedirectToAction("Index", "Tender", null);
             }
             ViewBag.Message = "登入失敗，請聯繫系統管理員!!";
             return View("Index");

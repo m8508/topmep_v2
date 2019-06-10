@@ -284,6 +284,8 @@
     <Compile Include="BO\PurchaseBO.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\TenderController.cs" />
+    <Compile Include="Filter\TopmepFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2139,6 +2141,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\ajax-loader.gif" />
     <Content Include="images\child.jpg" />
     <Content Include="images\engineer.jpg" />
     <Content Include="images\login.jpg" />
@@ -3097,6 +3100,34 @@
     <Content Include="Template\SiteExpSummary_form_Bk.xlsx" />
     <Content Include="Template\site_budget_form.xlsx" />
     <Content Include="Template\wage_form.xlsx" />
+    <Content Include="Views\Tender\Create.cshtml" />
+    <Content Include="Views\Tender\Details.cshtml" />
+    <Content Include="Views\Tender\Edit.cshtml" />
+    <Content Include="Views\Tender\EditForFP.cshtml" />
+    <Content Include="Views\Tender\EditForFW.cshtml" />
+    <Content Include="Views\Tender\EditForLCP.cshtml" />
+    <Content Include="Views\Tender\EditForPEP.cshtml" />
+    <Content Include="Views\Tender\EditForPLU.cshtml" />
+    <Content Include="Views\Tender\EditForTask.cshtml" />
+    <Content Include="Views\Tender\EditProjectItem.cshtml" />
+    <Content Include="Views\Tender\Index.cshtml" />
+    <Content Include="Views\Tender\InquiryList.cshtml" />
+    <Content Include="Views\Tender\ManageProjectItem.cshtml" />
+    <Content Include="Views\Tender\MapInfoMainPage.cshtml" />
+    <Content Include="Views\Tender\ProjectList.cshtml" />
+    <Content Include="Views\Tender\ShowProejctItems.cshtml" />
+    <Content Include="Views\Tender\Task.cshtml" />
+    <Content Include="Views\Tender\TaskDetails.cshtml" />
+    <Content Include="Views\Tender\uploadMapInfo.cshtml" />
+    <Content Include="Views\Tender\_MapDevicePage.cshtml" />
+    <Content Include="Views\Tender\_MapFPMainPage.cshtml" />
+    <Content Include="Views\Tender\_MapFWPage.cshtml" />
+    <Content Include="Views\Tender\_MapLCPPage.cshtml" />
+    <Content Include="Views\Tender\_MapPEPPage.cshtml" />
+    <Content Include="Views\Tender\_MapPLUPage.cshtml" />
+    <Content Include="Views\Tender\_ProjectItem.cshtml" />
+    <Content Include="Views\Tender\_TaskAssignItem.cshtml" />
+    <Content Include="Views\Tender\_uploadPlanItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
