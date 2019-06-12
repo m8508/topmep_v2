@@ -2,13 +2,17 @@
     ViewBag.Title = "備標作業-專案清單";
 }
 <!--專案搜尋區條件區域-->
-<div class="jumbotron">
-    <div class="row">
-        <div class="col-md-12">
-            <form name="FormSearchProject" id="FormSearchProject" action="Search" method="Post">
-                <div class="col-md-8 form-group">
-                    <label class="control-label col-md-2" for="textProejctName">專案名稱:</label>
-                    <input class="form-control col-md-6" id="textProejctName" name="textProejctName" type="text" />
+<!-- Basic Operation Area -->
+<div class="row">
+    <div class="card shadow col-12">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">請輸入查詢條件</h6>
+        </div>
+        <div class="card-body">
+            <form name="FormSearchProject" id="FormSearchProject" class="form-horizontal"  action="Search" method="Post">
+                <div class="col-md-12 form-group">
+                    <label class="control-label col-md-1" for="textProejctName">專案名稱:</label>
+                    <input class="form-control col-md-4" id="textProejctName" name="textProejctName" type="text" />
                     <div class="col-md-3">
                         <select id="selProjectStatus" name="selProjectStatus" class="selectpicker form-control">
                             <option value="備標">備標</option>
