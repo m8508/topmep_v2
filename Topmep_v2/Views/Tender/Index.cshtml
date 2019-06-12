@@ -9,11 +9,12 @@
             <h6 class="m-0 font-weight-bold text-primary">請輸入查詢條件</h6>
         </div>
         <div class="card-body">
-            <form name="FormSearchProject" id="FormSearchProject" class="form-horizontal"  action="Search" method="Post">
-                <div class="col-md-12 form-group">
-                    <label class="control-label col-md-1" for="textProejctName">專案名稱:</label>
-                    <input class="form-control col-md-4" id="textProejctName" name="textProejctName" type="text" />
-                    <div class="col-md-3">
+            <form name="FormSearchProject" id="FormSearchProject" class="form-inline" action="Search" method="Post">
+                <div class="col-lg-12 form-group">
+                    <label class="col-form-label col-lg-1" for="textProejctName">專案名稱:</label>
+                    <input class="form-control col-lg-4"
+                           id="textProejctName" name="textProejctName" type="text">
+                    <div class="col-lg-3">
                         <select id="selProjectStatus" name="selProjectStatus" class="selectpicker form-control">
                             <option value="備標">備標</option>
                             <option value="專案執行">專案執行</option>
@@ -24,26 +25,29 @@
                     <div id="divProcessing">
                         <img src="~/images/ajax-loader.gif">
                     </div>
-                </div>
-                <div class="col-md-2">
-                    <input id="Submit1" type="submit" class="btn btn-info" value="查詢" />
-                </div>
-                <div class="col-md-2 pull-left">
-                    <a href="Create" class="btn btn-warning">新增專案</a>
-                </div>
 
+                    <div class="col-lg-2">
+                        <input id="Submit1" type="submit" class="btn btn-info" value="查詢">
+                        <a href="Create" class="btn btn-warning">新增專案</a>
+                    </div>
+                </div>
             </form>
         </div>
     </div>
 </div>
 
 <!--專案列表區域-->
-<div class="container">
-    @ViewBag.SearchResult
-    @if (null != Model)
-    {
-        Html.RenderPartial("ProjectList");
-    }
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary"> @ViewBag.SearchResult</h6>
+        </div>
+
+        @if (null != Model)
+        {
+            Html.RenderPartial("ProjectList");
+        }
+    </div>
 </div>
 <script type="text/javascript">
     $(document).ready(function () {

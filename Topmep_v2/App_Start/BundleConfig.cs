@@ -12,6 +12,7 @@ namespace Topmep
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                                "~/Scripts/umd/popper.js",
                         "~/Scripts/jquery.validate*"));
 
             // 使用開發版本的 Modernizr 進行開發並學習。然後，當您
