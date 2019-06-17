@@ -1,4 +1,5 @@
 ﻿@using Topmep.Models;
+@using Topmep.Service;
 @using System.Collections.Generic;
 <!DOCTYPE html>
 <html>
@@ -30,9 +31,9 @@
             </a>
             <!--建立選單區塊-->
             @{
-
-                SYS_USER loginUser = (SYS_USER)HttpContext.Current.Session["LoginUser"];
-                List<SYS_MODULE>  userMenu = (List<SYS_MODULE>)Session["UserMenu"];
+                UserService service =(UserService)Session["UserService"];
+                SYS_USER loginUser = service.loginUser;
+                List<SYS_MODULE> userMenu = service.userMenu;
             }
             @Html.Partial("_Menu", userMenu)
             <!-- Divider -->

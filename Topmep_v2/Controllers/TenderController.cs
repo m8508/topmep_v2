@@ -177,7 +177,7 @@ namespace topmeperp.Controllers
             ViewBag.projectid = id;
             List<TND_TASKASSIGN> lstTask = null;
             TnderProjectService service = new TnderProjectService();
-            lstTask = service.getTaskByPrjId(id,null);
+            lstTask = service.getTaskByPrjId(id, null);
             TND_PROJECT p = service.getProjectById(id);
             TndProjectModels viewModel = new TndProjectModels();
             var priId = service.getTaskAssignById(id);
@@ -188,21 +188,22 @@ namespace topmeperp.Controllers
                 viewModel.tndTaskAssign = lstTask;
             }
             //畫面上權限管理控制
-            //頁面上使用ViewBag 定義開關\@ViewBag.F00003
             //由Session 取得權限清單
-            List<SYS_FUNCTION> lstFunctions = (List<SYS_FUNCTION>)Session["functions"];
-            //開關預設關閉
-            @ViewBag.F00003 = "disabled";
-            //輪巡功能清單，若全線存在則將開關打開 @ViewBag.F00003 = "";
-            foreach (SYS_FUNCTION f in lstFunctions)
+            // List<SYS_FUNCTION> lstFunctions = (List<SYS_FUNCTION>)Controller.Session["UserPrivige"];
+            UserService userservice = (UserService)Session["UserService"];
+            if (userservice.CheckPrivlege("F00003"))
             {
-                if (f.FUNCTION_ID == "F00003")
-                {
-                    @ViewBag.F00003 = "";
-                }
+                @ViewBag.F00003 = "";
             }
+            else
+            {
+                @ViewBag.F00003 = "disable";
+            }
+
             return View(viewModel);
         }
+
+
         //將專案狀態調整為結案
         public string closeProject()
         {

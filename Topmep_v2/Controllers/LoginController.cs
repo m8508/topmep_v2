@@ -24,9 +24,10 @@ namespace Topmep.Controllers
             UserService service = new UserService();
             if (service.Login(f["userid"], f["password"]) != null)
             {
-                Session["LoginUser"] = service.loginUser;
-                Session["UserMenu"] = service.userMenu;
-                Session["UserPrivige"] = service.userPrivilege;
+                Session["UserService"] = service;
+                //Session["LoginUser"] = service.loginUser;
+                //Session["UserMenu"] = service.userMenu;
+                //Session["UserPrivige"] = service.userPrivilege;
                 return RedirectToAction("Index", "Tender", null);
             }
             ViewBag.Message = "登入失敗，請聯繫系統管理員!!";

@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using Topmep.Models;
 using EntityState = System.Data.Entity.EntityState;
+using System.Web.Mvc;
 
 namespace Topmep.Service
 {
@@ -136,6 +137,20 @@ namespace Topmep.Service
                    , new SqlParameter("userid", userid)).First();
             }
             return u;
+        }
+
+        public bool CheckPrivlege(string functionId)
+        {
+            bool check = false;
+            //輪巡功能清單，若全線存在則將開關打開 @ViewBag.F00003 = "";
+            foreach (SYS_FUNCTION f in userPrivilege)
+            {
+                if (f.FUNCTION_ID == functionId)
+                {
+                    check = true;
+                }
+            }
+            return check;
         }
     }
     #endregion

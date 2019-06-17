@@ -1,7 +1,5 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "工作任務分派";
-    Layout = "~/Views/Shared/_MenuLayout.cshtml";
 }
 <div class="container">
     @using (Html.BeginForm("Task", "Tender", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data" }))
