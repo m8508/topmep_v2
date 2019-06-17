@@ -4,13 +4,13 @@
         <thead>
             <tr>
                 <th>
-                    專案編號
+                    編號
                 </th>
                 <th>
                     專案名稱
                 </th>
                 <th>
-                    專案負責人
+                    負責人
                 </th>
                 <th>
                     整理後標單檔名稱
@@ -32,7 +32,7 @@
             {
                 <tr>
                     <td>
-                        <a href="/Tender/Details/@Html.DisplayFor(modelItem => item.PROJECT_ID)">@Html.DisplayFor(modelItem => item.PROJECT_ID)</a>
+                        <a href="~/Tender/Details/@Html.DisplayFor(modelItem => item.PROJECT_ID)">@Html.DisplayFor(modelItem => item.PROJECT_ID)</a>
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.PROJECT_NAME)

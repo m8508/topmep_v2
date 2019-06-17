@@ -9,7 +9,8 @@ namespace Topmep
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery.ya-enter2tab.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                                 "~/Scripts/umd/popper.js",
@@ -23,7 +24,9 @@ namespace Topmep
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/bootstrap.bundle.js",
-                      "~/Scripts/sb-admin-2.js"));
+                      "~/Scripts/sb-admin-2.js",
+                      "~/Scripts/bootstrap-datepicker.js",
+                      "~/Scripts/locales/bootstrap-datepicker.zh-TW.min.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap*",
