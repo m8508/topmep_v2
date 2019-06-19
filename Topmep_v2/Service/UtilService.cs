@@ -53,9 +53,9 @@ namespace Topmep.Service
             log.Debug(itemJson);
             return itemJson;
         }
-        public static SYS_USER getUserInfoFromSession( HttpSessionStateBase Session )
+        public static SYS_USER GetUserInfoFromSession( HttpSessionStateBase Session )
         {
-            SYS_USER u = (SYS_USER)Session["user"];
+            SYS_USER u = ((UserService)Session["UserService"]).loginUser;
             return u;
         }
     }

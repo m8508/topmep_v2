@@ -6,71 +6,39 @@
 }
 <div class="container-fluid">
     <h6>@ViewBag.Title</h6>
-    <div class="row justify-content-md-start">
-        <input type="button" class="btn btn-success" onclick="history.back()" value="回上一頁">
-
+    <div class="row">
+        <input type="button" class="btn btn-sm btn-success" onclick="history.back()" value="回上一頁">
         @{
             UserService service = (UserService)Session["UserService"];
         }
         @if ((service.userPrivilege).Exists(x => x.FUNCTION_ID == "F00004"))
         {
-            <select id="selProjectStatus" name="selProjectStatus" class="form-control col-2">
+            <select id="selProjectStatus" name="selProjectStatus" class="form-control-sm col-2">
                 <option value="備標">備標</option>
                 <option value="專案執行">專案執行</option>
                 <option value="保固">保固</option>
                 <option value="結案">結案</option>
             </select>
-            <input type="button" class="btn btn-danger" onclick="closeProject()" value="變更">
+            <input type="button" class="btn  btn-sm btn-danger" onclick="closeProject()" value="變更">
         }
     </div>
 </div>
+<hr />
 <div class="container-fluid">
-    <nav class="navbar navbar-expand-sm navbar-light bg-gray-200">
-        <a class="navbar-brand" href="#">功能區</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="@Url.Action("ManageProjectItem","Tender", new { id = @Model.tndProject.PROJECT_ID})">標單明細 <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Create","Tender", new { id = @Model.tndProject.PROJECT_ID})">基本資料</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("uploadMapInfo","Tender", new { id = @Model.tndProject.PROJECT_ID})">上傳發包數量</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("MapInfoMainPage","Tender", new { id = @Model.tndProject.PROJECT_ID})">發包數量修改</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("InquiryMainPage", "Inquiry", new { id = @Model.tndProject.PROJECT_ID})">詢價單管理</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("ComparisonMain","Inquiry", new { id = @Model.tndProject.PROJECT_ID})">比價作業</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index","Wage", new { id = @Model.tndProject.PROJECT_ID})">工率表下載</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("Index","Wage", new { id = @Model.tndProject.PROJECT_ID})">工率表上傳</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="@Url.Action("costAnalysis","Inquiry", new { id = @Model.tndProject.PROJECT_ID})">成本分析</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <div class="btn-group" role="group" aria-label="功能區">
+        <a class="btn btn-sm btn-info" href="@Url.Action("ManageProjectItem","Tender", new { id = @Model.tndProject.PROJECT_ID})">標單明細</a>
+        <a class="btn btn-sm btn-info" href="@Url.Action("Create","Tender", new { id = @Model.tndProject.PROJECT_ID})">基本資料</a>
+        <a class="btn btn-sm btn-info" href="@Url.Action("uploadMapInfo","Tender", new { id = @Model.tndProject.PROJECT_ID})">上傳發包數量</a>
+        <a class="btn btn-sm btn-info" href="@Url.Action("MapInfoMainPage","Tender", new { id = @Model.tndProject.PROJECT_ID})">發包數量修改</a>
+        <a class="btn btn-sm btn-info" href="@Url.Action("InquiryMainPage", "Inquiry", new { id = @Model.tndProject.PROJECT_ID})">詢價單管理</a>
+        <a class="btn btn-sm btn-info" href="@Url.Action("ComparisonMain","Inquiry", new { id = @Model.tndProject.PROJECT_ID})">比價作業</a>
+        <a class="btn btn-sm btn-info" href="@Url.Action("Index","Wage", new { id = @Model.tndProject.PROJECT_ID})">工率表下載</a>
+        <a class="btn btn-sm btn-info" href="@Url.Action("Index","Wage", new { id = @Model.tndProject.PROJECT_ID})">工率表上傳</a>
+        <a class="btn btn-sm btn-info" href="@Url.Action("costAnalysis","Inquiry", new { id = @Model.tndProject.PROJECT_ID})">成本分析</a>
+    </div>
 </div>
 <div class="container-fluid">
     <h6>備標會辦單</h6>
-    <div class="btn-group" role="group" aria-label="備標會辦單">
-        <input id="btnPrint" type="button" class="btn btn-info" value="列印備標會辦單" onclick="javascript: printpage('printarea')" />
-        @if (null == ViewBag.taskAssign || ViewBag.taskAssign == "")
-        {
-            <input type="button" value="任務分派" class="btn btn-info" id="saveForm" />
-        }
-    </div>
-
 
     <div class="card" id="printarea">
         <div class="card-body">
@@ -199,12 +167,19 @@
                                 <td><input type="text" id="map_remark" name="map_remark" /></td>
                         </table>
                     }
+                    <div class="btn-group" role="group" aria-label="備標會辦單">
+                        <input id="btnPrint" type="button" class="btn btn-sm btn-info" value="列印備標會辦單" onclick="javascript: printpage('printarea')" />
+                        @if (null == ViewBag.taskAssign || ViewBag.taskAssign == "")
+                        {
+                            <input type="button" value="任務分派" class="btn btn-sm btn-info" id="saveForm" />
+                        }
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-<br />
+
 <div class="container-fluid">
     <h6>得標標單上傳</h6>
     <input type="hidden" name="projectid" id="projectid" value="@ViewBag.projectid" />
@@ -212,7 +187,7 @@
         Html.RenderPartial("_uploadPlanItem");
     }
 </div>
-<div class="row">
+<div class="container-fluid">
     <div>
         <h6>檔案上傳區</h6>
     </div>

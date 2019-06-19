@@ -6,7 +6,7 @@
 <div class="col-md-12">
     <!-- Reg-Form new { enctype = "multipart/form-data" } -->
     <fieldset id="form1">
-        @using (Html.BeginForm("Create", "Tender", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Create", "Tender", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data", name = "mainform", id = "mainform" }))
         {
             <h3>專案</h3><input type="button" class="btn btn-success" onclick="javascript:window.location='@Url.Action("Index", "Tender")'" value="回首頁">
             <div class="row" style="padding-top:10px;">
@@ -22,7 +22,7 @@
                         <label class="col-md-2 control-label">專案名稱 : </label>
                         <div class="col-md-10">
                             <label class="input">
-                                @Html.TextBoxFor(m => m.PROJECT_NAME, new { @class = "form-control", @id = "PROJECT_NAME" , @tabindex = "1" })
+                                @Html.TextBoxFor(m => m.PROJECT_NAME, new { @class = "form-control", @id = "PROJECT_NAME", @tabindex = "1" })
                             </label>
                         </div>
 
@@ -130,7 +130,7 @@
             <br />
             <div class="row">
                 <div class="col-md-12">
-                    <input type="button" value="儲存" class="btn btn-default" onclick="Confirm_Form()" />
+                    <input type="button" value="儲存" class="btn btn-info" onclick="Confirm_Form()" />
                 </div>
             </div>
 
@@ -158,7 +158,7 @@
         var name = $('#PROJECT_NAME').val();
         var date1 = $('#SCHDL_OFFER_DATE').val();
         var date2 = $('#DUE_DATE').val();
-        var rowNo = $('#star_row_no').val();
+        var rowNo = $('#START_ROW_NO').val();
         if (name == "") {
             alert("專案名稱不可為空值，請輸入專案名稱！");
             return false;
@@ -175,6 +175,7 @@
             alert("整理後標單起始列不可為空值，請輸入整理後標單起始列列數！");
             return false;
         }
+        document.mainform.submit();
     }
 
 </script>

@@ -13,9 +13,9 @@ namespace Topmep.Filter
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             log.Info("request URL=" + context.HttpContext.Request.RawUrl);
-            if (context.HttpContext.Session["user"] != null || exceptionUrl(context.HttpContext.Request.RawUrl))
+            if (context.HttpContext.Session["UserService"] != null || exceptionUrl(context.HttpContext.Request.RawUrl))
             {
-                //驗證成功
+                //驗證成功((UserService)Session["UserService"]).loginUser
                 log.Info("session exist!!");
             }
             else

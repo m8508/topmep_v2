@@ -48,7 +48,7 @@ namespace topmeperp.Controllers
         {
             log.Info("create project process! project =" + prj.ToString());
             TnderProjectService service = new TnderProjectService();
-            SYS_USER u = (SYS_USER)Session["user"];
+            SYS_USER u = UtilService.GetUserInfoFromSession(Session);
             string message = "";
             //1.更新或新增專案基本資料
             if (prj.PROJECT_ID == "" || prj.PROJECT_ID == null)
@@ -116,7 +116,7 @@ namespace topmeperp.Controllers
             TnderProjectService service = new TnderProjectService();
             TND_PROJECT p = service.getProjectById(id);
             ViewBag.projectName = p.PROJECT_NAME;
-            SYS_USER u = (SYS_USER)Session["user"];
+            SYS_USER u = UtilService.GetUserInfoFromSession(Session);
             ViewBag.createid = u.USER_ID;
             return View();
         }
@@ -150,7 +150,7 @@ namespace topmeperp.Controllers
             log.Info("update task assign:task_id=" + taskassign.TASK_ID);
             string message = "";
             TnderProjectService service = new TnderProjectService();
-            SYS_USER u = (SYS_USER)Session["user"];
+            SYS_USER u = UtilService.GetUserInfoFromSession(Session);
             taskassign.MODIFY_ID = u.USER_ID;
             taskassign.MODIFY_DATE = DateTime.Now;
             if (taskassign.FINISH_DATE.ToString() == "")
@@ -716,7 +716,7 @@ namespace topmeperp.Controllers
                 log.Error(item.PROJECT_ITEM_ID + " not exce row id:" + ex.Message);
             }
 
-            SYS_USER loginUser = (SYS_USER)Session["user"];
+            SYS_USER loginUser = UtilService.GetUserInfoFromSession(Session);
             item.MODIFY_USER_ID = loginUser.USER_ID;
             item.MODIFY_DATE = DateTime.Now;
             InquiryFormService service = new InquiryFormService();
@@ -755,7 +755,7 @@ namespace topmeperp.Controllers
             string projectid = Request["projectid"];
             log.Info("Upload plan items for projectid=" + projectid);
             TnderProjectService service = new TnderProjectService();
-            SYS_USER u = (SYS_USER)Session["user"];
+            SYS_USER u = UtilService.GetUserInfoFromSession(Session);
             string message = "";
             //修改專案狀態
             prj.PROJECT_ID = projectid;
@@ -841,7 +841,7 @@ namespace topmeperp.Controllers
             log.Debug("ProjectID=" + projectid + ",Upload ProjectItem=" + file1.FileName);
             TnderProjectService service = new TnderProjectService();
             service.getProjectById(projectid);
-            SYS_USER u = (SYS_USER)Session["user"];
+            SYS_USER u = UtilService.GetUserInfoFromSession(Session);
 
             if (null != file1 && file1.ContentLength != 0)
             {
@@ -947,7 +947,7 @@ namespace topmeperp.Controllers
                 map.FINISH_DATE = Convert.ToDateTime(form.Get("map_finish_date"));
             }
             UserService us = new UserService();
-            SYS_USER u = (SYS_USER)Session["user"];
+            SYS_USER u = UtilService.GetUserInfoFromSession(Session);
             SYS_USER uInfo = us.GetUserInfo(u.USER_ID);
             leader.CREATE_ID = uInfo.USER_ID;
             leader.CREATE_DATE = DateTime.Now;
@@ -1000,7 +1000,7 @@ namespace topmeperp.Controllers
 
             item.CREATE_DATE = DateTime.Now;
             UserService us = new UserService();
-            SYS_USER u = (SYS_USER)Session["user"];
+            SYS_USER u = UtilService.GetUserInfoFromSession(Session);
             item.CREATE_ID = u.USER_ID;
             item.MODIFY_ID = u.USER_ID;
             item.MODIFY_DATE = DateTime.Now;
