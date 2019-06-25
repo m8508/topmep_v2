@@ -1,24 +1,31 @@
 ﻿@using Topmep.Models
 @model TND_PROJECT
 @{
-    ViewBag.Title = "備標作業-新增專案";
+    ViewBag.Title = "備標作業-專案基本資料";
 }
 <div class="col-md-12">
     <!-- Reg-Form new { enctype = "multipart/form-data" } -->
     <fieldset id="form1">
         @using (Html.BeginForm("Create", "Tender", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data", name = "mainform", id = "mainform" }))
         {
-            <h3>專案</h3><input type="button" class="btn btn-success" onclick="javascript:window.location='@Url.Action("Index", "Tender")'" value="回首頁">
-            <div class="row" style="padding-top:10px;">
+            <h6>@ViewBag.Title<input type="button" class="btn btn-sm btn-success" onclick="javascript:window.location='@Url.Action("Index", "Tender")'" value="回首頁"></h6>
+            <div class="row">
                 <div class="col-md-8">
                     <div class="row ">
                         <label class="col-md-2 control-label">專案編號 : </label>
-                        <div class="col-md-10">
+                        <div class="col-md-5">
                             <label class="input">
                                 <input type="text" id="PROJECT_ID" name="PROJECT_ID" class="form-control background-color:#cccccc;" value="@ViewBag.projectId" readonly />
                             </label>
                         </div>
-
+                            <label class="col-md-2 control-label">狀態 : </label>
+                            <div class='col-md-3'>
+                                <label class="input">
+                                    @Html.TextBoxFor(m => m.STATUS, new { @class = "form-control col-md-5", @readonly = "readonly" })
+                                </label>
+                            </div>
+                    </div>
+                    <div class="row">
                         <label class="col-md-2 control-label">專案名稱 : </label>
                         <div class="col-md-10">
                             <label class="input">
@@ -82,100 +89,97 @@
                         </div>
 
                         <label class="col-md-2 control-label">收件日 : </label>
-                        <div class='col-md-10'>
+                        <div class='col-md-4'>
                             <label class="input">
-                                @Html.TextBoxFor(m => m.DUE_DATE, new { @class = "form-control", @id = "DUE_DATE" })
+                                @Html.TextBoxFor(m => m.DUE_DATE, "{0:yyyy/MM/dd}", new { @class = "form-control col-md-8", @id = "DUE_DATE" })
                             </label>
                         </div>
 
                         <label class="col-md-2 control-label">預計投標日: </label>
-                        <div class='col-md-10'>
+                        <div class='col-md-4'>
                             <label class="input">
-                                @Html.TextBoxFor(m => m.SCHDL_OFFER_DATE, new { @class = "form-control", @id = "SCHDL_OFFER_DATE" })
-                            </label>
-                        </div>
-
-                        <label class="col-md-2 control-label">工率乘數: </label>
-                        <div class="col-md-10">
-                            <label class="input">
-                                @Html.TextBoxFor(m => m.WAGE_MULTIPLIER, new { @class = "form-control" })
+                                @Html.TextBoxFor(m => m.SCHDL_OFFER_DATE, "{0:yyyy/MM/dd}", new { @class = "form-control col-md-8", @id = "SCHDL_OFFER_DATE" })
                             </label>
                         </div>
 
                         <label class="col-md-2 control-label">開始Row: </label>
-                        <div class='col-md-10'>
+                        <div class='col-md-4'>
                             <label class="input">
-                                @Html.TextBoxFor(m => m.START_ROW_NO, new { @class = "form-control", @id = "START_ROW_NO" })
+                                @Html.TextBoxFor(m => m.START_ROW_NO, new { @class = "form-control col-md-8", @id = "START_ROW_NO" })
                             </label>
                         </div>
-                        <label class="col-md-2 control-label">專案狀態 : </label>
-                        <div class='col-md-10'>
+                        <label class="col-md-2 control-label">工率乘數: </label>
+                        <div class="col-md-4">
                             <label class="input">
-                                @Html.TextBoxFor(m => m.STATUS, new { @class = "form-control background - color:#cccccc;", @readonly = "readonly" })
+                                @Html.TextBoxFor(m => m.WAGE_MULTIPLIER, new { @class = "form-control col-md-8" })
                             </label>
                         </div>
 
-                        <label class="col-md-3 control-label">整理後標單檔案: </label>
+                        <label class="col-md-2 control-label">整理後標單: </label>
                         <div class='col-md-9'>
-                            <input type="file" name="file" id="file" />
+                            <input type="file" class="custom-file-input" name="file" id="file" />
+                            <label class="custom-file-label" for="file">選取檔案</label>
                         </div>
                         @Html.HiddenFor(m => m.OWNER_USER_ID)
                         @Html.HiddenFor(m => m.CREATE_USER_ID)
                         @Html.HiddenFor(m => m.CREATE_DATE)
                     </div>
                 </div>
-                <div class="col-md-4 alert-info">@Html.Raw(ViewBag.result)</div>
-            </div>
+            <div class="col-md-4 alert-info">@Html.Raw(ViewBag.result)</div>
+    </div>
 
-            <br />
-            <div class="row">
-                <div class="col-md-12">
-                    <input type="button" value="儲存" class="btn btn-info" onclick="Confirm_Form()" />
-                </div>
-            </div>
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <input type="button" value="儲存" class="btn btn-info" onclick="Confirm_Form()" />
+        </div>
+    </div>
 
-        }
-    </fieldset>
-</div>
-<script>
-    $(document).ready(function () {
-        $(function () {
-            $('#SCHDL_OFFER_DATE').datepicker({
-                format: 'YYYY/MM/DD',
-                language: "zh-TW"
-            });
-        });
-        $(function () {
-            $('#DUE_DATE').datepicker({
-                format: 'YYYY/MM/DD',
-                language: "zh-TW"
-            });
-        });
-        $("fieldset").enableEnterToTab();
-    })
+}
+        </fieldset>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $(function () {
+                    $('#SCHDL_OFFER_DATE').datepicker({
+                        format: 'YYYY/MM/DD',
+                        language: "zh-TW"
+                    });
+                });
+                $(function () {
+                    $('#DUE_DATE').datepicker({
+                        format: 'YYYY/MM/DD',
+                        language: "zh-TW"
+                    });
+                });
+                $("fieldset").enableEnterToTab();
+                $("#file").on("change", function () {
+                    var fileName = $(this).val().split("\\").pop();
+                    $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
+                });
+            })
 
-    function Confirm_Form() {
-        var name = $('#PROJECT_NAME').val();
-        var date1 = $('#SCHDL_OFFER_DATE').val();
-        var date2 = $('#DUE_DATE').val();
-        var rowNo = $('#START_ROW_NO').val();
-        if (name == "") {
-            alert("專案名稱不可為空值，請輸入專案名稱！");
-            return false;
-        }
-        if (date1 == "") {
-            alert("預計投標日不可為空值，請選取預計投標日！");
-            return false;
-        }
-        if (date2 == "") {
-            alert("收件日不可為空值，請選取收件日！");
-            return false;
-        }
-        if (rowNo == "") {
-            alert("整理後標單起始列不可為空值，請輸入整理後標單起始列列數！");
-            return false;
-        }
-        document.mainform.submit();
-    }
-
-</script>
+            function Confirm_Form() {
+                var name = $('#PROJECT_NAME').val();
+                var date1 = $('#SCHDL_OFFER_DATE').val();
+                var date2 = $('#DUE_DATE').val();
+                var rowNo = $('#START_ROW_NO').val();
+                if (name == "") {
+                    alert("專案名稱不可為空值，請輸入專案名稱！");
+                    return false;
+                }
+                if (date1 == "") {
+                    alert("預計投標日不可為空值，請選取預計投標日！");
+                    return false;
+                }
+                if (date2 == "") {
+                    alert("收件日不可為空值，請選取收件日！");
+                    return false;
+                }
+                if (rowNo == "") {
+                    alert("整理後標單起始列不可為空值，請輸入整理後標單起始列列數！");
+                    return false;
+                }
+                document.mainform.submit();
+            }
+        </script>

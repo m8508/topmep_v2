@@ -11,12 +11,12 @@ using Topmep.Service;
 
 namespace topmeperp.Controllers
 {
+    [Topmep.Filter.AuthFilter]
     public class TenderController : Controller
     {
         private static Logger log = NLog.LogManager.GetCurrentClassLogger();
 
         // GET: Tender
-       // [Topmep.Filter.AuthFilter]
         public ActionResult Index()
         {
             List<TND_PROJECT> lstProject = SearchProjectByName("", "備標");
@@ -77,6 +77,7 @@ namespace topmeperp.Controllers
                 prj.EXCEL_FILE_NAME = file.FileName;
                 //2.2 將上傳檔案存檔
                 var fileName = Path.GetFileName(file.FileName);
+                ZipFileCreator.CreateDirectory(ContextService.strUploadPath + "/" + prj.PROJECT_ID);
                 var path = Path.Combine(ContextService.strUploadPath + "/" + prj.PROJECT_ID, fileName);
                 log.Info("save excel file:" + path);
                 file.SaveAs(path);
@@ -90,7 +91,6 @@ namespace topmeperp.Controllers
                     //2.3 記錄錯誤訊息
                     message = message + "標單品項:共" + poiservice.lstProjectItem.Count + "筆資料，";
                     message = message + "<a target=\"_blank\" href=\"/Tender/ManageProjectItem?id=" + prj.PROJECT_ID + "\"> 標單明細檢視畫面單</a><br/>" + poiservice.errorMessage;
-                    //        < button type = "button" class="btn btn-primary" onclick="location.href='@Url.Action("ManageProjectItem","Tender", new { id = @Model.tndProject.PROJECT_ID})'; ">標單明細</button>
                     //2.4
                     log.Info("Delete TND_PROJECT_ITEM By Project ID");
                     service.delAllItemByProject();
@@ -789,6 +789,7 @@ namespace topmeperp.Controllers
                 log.Info("Parser Excel data:" + file.FileName);
                 //2.1 將上傳檔案存檔
                 var fileName = Path.GetFileName(file.FileName);
+                ZipFileCreator.CreateDirectory(ContextService.strUploadPath + "/" + projectid);
                 var path = Path.Combine(ContextService.strUploadPath + "/" + projectid, fileName);
                 log.Info("save excel file:" + path);
                 file.SaveAs(path);

@@ -3211,7 +3211,7 @@
     <Content Include="Views\Tender\InquiryList.cshtml" />
     <Content Include="Views\Tender\ManageProjectItem.cshtml" />
     <Content Include="Views\Tender\MapInfoMainPage.cshtml" />
-    <Content Include="Views\Tender\ProjectList.cshtml" />
+    <Content Include="Views\Tender\_ProjectList.cshtml" />
     <Content Include="Views\Tender\ShowProejctItems.cshtml" />
     <Content Include="Views\Tender\Task.cshtml" />
     <Content Include="Views\Tender\TaskDetails.cshtml" />
