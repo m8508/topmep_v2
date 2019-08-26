@@ -11,17 +11,17 @@
             <h6>@ViewBag.Title<input type="button" class="btn btn-sm btn-success" onclick="javascript:window.location='@Url.Action("Index", "Tender")'" value="回首頁"></h6>
             <div class="row">
                 <div class="col-md-8">
-                    <div class="row ">
+                    <div class="row">
                         <label class="col-md-2 control-label">專案編號 : </label>
-                        <div class="col-md-5">
+                        <div class="col-md-3">
                             <label class="input">
                                 <input type="text" id="PROJECT_ID" name="PROJECT_ID" class="form-control background-color:#cccccc;" value="@ViewBag.projectId" readonly />
                             </label>
                         </div>
                             <label class="col-md-2 control-label">狀態 : </label>
-                            <div class='col-md-3'>
+                            <div class='col-md-4'>
                                 <label class="input">
-                                    @Html.TextBoxFor(m => m.STATUS, new { @class = "form-control col-md-5", @readonly = "readonly" })
+                                    @Html.TextBoxFor(m => m.STATUS, new { @class = "form-control", @readonly = "readonly" })
                                 </label>
                             </div>
                     </div>

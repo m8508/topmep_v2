@@ -127,14 +127,14 @@
                                         </td>
                                         @if (null != item.FINISH_DATE)
                                         {
-                                            <td><input type="text" id="finish_date" name="finish_date" class="form-control col-8" value="@item.FINISH_DATE.Value.ToString("yyyy/MM/dd")" /></td>
+                                            <td><input type="text" id="finish_date" name="finish_date" class="form-control" value="@item.FINISH_DATE.Value.ToString("yyyy/MM/dd")" /></td>
                                         }
                                         else
                                         {
-                                            <td><input type="text" id="finish_date" name="finish_date" class="form-control col-8" value="@item.FINISH_DATE" /></td>
+                                            <td><input type="text" id="finish_date" name="finish_date" class="form-control" value="@item.FINISH_DATE" /></td>
                                         }
                                         <td>
-                                            <input type="text" id="remark" name="remark" class="form-control col-8" value="@item.REMARK" />
+                                            <input type="text" id="remark" name="remark" class="form-control" value="@item.REMARK" />
                                         </td>
                                     </tr>
                                 }
@@ -206,7 +206,7 @@
     $(document).ready(function () {
         $(function () {
             $('#finishDate').datepicker({
-                format: 'YYYY/MM/DD',
+                format: 'yyyy/mm/dd',
                 language: "zh-TW"
             });
         });

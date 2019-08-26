@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Topmep.Models;
 using Topmep.Service;
 
 namespace Topmep.Controllers
@@ -31,6 +32,13 @@ namespace Topmep.Controllers
                 return RedirectToAction("Index", "Tender", null);
             }
             ViewBag.Message = "登入失敗，請聯繫系統管理員!!";
+            return View("Index");
+        }
+        public ActionResult Logout()
+        {
+            SYS_USER u =  UtilService.GetUserInfoFromSession(Session);
+            log.Info(u.USER_ID + " Logout!!");
+            Session.Clear();//["UserService"] = null;
             return View("Index");
         }
     }

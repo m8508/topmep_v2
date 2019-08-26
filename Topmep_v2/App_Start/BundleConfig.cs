@@ -30,7 +30,8 @@ namespace Topmep
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap*",
-                      "~/Content/sb-admin-2.css"));
+                      "~/Content/sb-admin-2.css",
+                      "~/Content/Site.css"));
         }
     }
 }
