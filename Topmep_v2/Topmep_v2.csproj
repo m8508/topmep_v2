@@ -282,9 +282,31 @@
     <Compile Include="BO\Model4Estimation.cs" />
     <Compile Include="BO\PivotDataModel.cs" />
     <Compile Include="BO\PurchaseBO.cs" />
+    <Compile Include="Controllers\BankInfoController.cs" />
+    <Compile Include="Controllers\CashFlowController.cs" />
+    <Compile Include="Controllers\CostChangeController.cs" />
+    <Compile Include="Controllers\DeptManageController.cs" />
+    <Compile Include="Controllers\EstimationController.cs" />
+    <Compile Include="Controllers\FormManageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InquiryController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MaterialManageController.cs" />
+    <Compile Include="Controllers\PaymentManagementController.cs" />
+    <Compile Include="Controllers\PlanController.cs" />
+    <Compile Include="Controllers\ProjectCompareController.cs" />
+    <Compile Include="Controllers\ProjectOrganizationController.cs" />
+    <Compile Include="Controllers\ProjectPlanController.cs" />
+    <Compile Include="Controllers\PurchaseFormController.cs" />
+    <Compile Include="Controllers\RoleManageController.cs" />
+    <Compile Include="Controllers\SubjectManageController.cs" />
+    <Compile Include="Controllers\SupplierManageController.cs" />
+    <Compile Include="Controllers\SystemParameterController.cs" />
     <Compile Include="Controllers\TenderController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\TypeManageController.cs" />
+    <Compile Include="Controllers\UserManageController.cs" />
+    <Compile Include="Controllers\WageController.cs" />
     <Compile Include="Filter\TopmepFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -3225,6 +3247,24 @@
     <Content Include="Views\Tender\_ProjectItem.cshtml" />
     <Content Include="Views\Tender\_TaskAssignItem.cshtml" />
     <Content Include="Views\Tender\_uploadPlanItem.cshtml" />
+    <Content Include="Views\Inquiry\ComparisonData.cshtml" />
+    <Content Include="Views\Inquiry\ComparisonMain.cshtml" />
+    <Content Include="Views\Inquiry\costAnalysis.cshtml" />
+    <Content Include="Views\Inquiry\ExportInquiry.cshtml" />
+    <Content Include="Views\Inquiry\FormItemList.cshtml" />
+    <Content Include="Views\Inquiry\Index.cshtml" />
+    <Content Include="Views\Inquiry\InquiryMainPage.cshtml" />
+    <Content Include="Views\Inquiry\mailForm.cshtml" />
+    <Content Include="Views\Inquiry\RFQ.cshtml" />
+    <Content Include="Views\Inquiry\SinglePrjForm.cshtml" />
+    <Content Include="Views\Inquiry\_InquiryMainPage.cshtml" />
+    <Content Include="Views\Inquiry\_InquirySupplierPage.cshtml" />
+    <Content Include="Views\Inquiry\_SinglePrjForm.cshtml" />
+    <Content Include="Views\include\_PaymentDetails.cshtml" />
+    <Content Include="Views\include\_PaymentHead.cshtml" />
+    <Content Include="Views\include\_PaymentInvoices.cshtml" />
+    <Content Include="Views\include\_WorkFlowFunction.cshtml" />
+    <Content Include="Views\Tender\ProjectList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

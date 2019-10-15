@@ -31,9 +31,18 @@
             </a>
             <!--建立選單區塊-->
             @{
-                UserService service =(UserService)Session["UserService"];
-                SYS_USER loginUser = service.loginUser;
-                List<SYS_MODULE> userMenu = service.userMenu;
+                SYS_USER loginUser = null;
+                List<SYS_MODULE> userMenu = null;
+                try
+                {
+                    UserService service = (UserService)Session["UserService"];
+                    loginUser = service.loginUser;
+                    userMenu = service.userMenu;
+                }catch(Exception ex)
+                {
+                    Response.Redirect("~/");
+                    Response.End();
+                }
             }
             @Html.Partial("_Menu", userMenu)
             <!-- Divider -->

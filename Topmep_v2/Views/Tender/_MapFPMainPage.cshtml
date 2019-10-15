@@ -1,7 +1,7 @@
 ﻿@model Topmep.Models.MapInfoModels
 <div class="container-fluid">
-    <h3>消防電發包數量</h3><br/>
-    <h5>@ViewBag.Result2</h5>
+    <h6>消防電發包數量</h6><br/>
+    <h8>@ViewBag.Result2</h8>
     @if (null != Model)
     {
         <table class="table table-bordered">
@@ -30,7 +30,7 @@
                 @foreach (var item in Model.mapFP)
                 {
                     <tr>
-                        <td>
+                        <td class="align-items-sm-start">
                             @Html.ActionLink("修改", "EditForFP", new { id = item.FP_ID }) |
                             @Html.ActionLink("刪除", "DeleteForFP", new { id = item.FP_ID })
                         </td>

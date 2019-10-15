@@ -16,7 +16,7 @@ namespace Topmep.Tests.Service
             target.GetPrivilege("admin", "111111");
             //string output = JsonConvert.SerializeObject(target.userPrivilege);
             Console.WriteLine(target.userPrivilege.Count);
-            foreach (SYS_MODULE m in target.userPrivilege)
+            foreach (SYS_MODULE m in target.userMenu)
             {
          
                 if (m.SubModule != null)
