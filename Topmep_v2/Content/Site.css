@@ -21,3 +21,20 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.card-body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 0.25rem;
+}
+
+.ShowTabBody {
+    height: auto;
+    visibility: visible;
+}
+
+.HiddenTabBody {
+    height: 0px;
+    visibility: hidden;
+}

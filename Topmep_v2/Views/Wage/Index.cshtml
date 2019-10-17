@@ -1,24 +1,23 @@
 ﻿@{
     ViewBag.Title = "備標作業-工率表下載作業";
-    Layout = "~/Views/Shared/_MenuLayout.cshtml";
 }
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3 form-group" style="padding-top:10px">
+        <div class="col-md-6 form-group" style="padding-top:10px">
             <h3>工率下載與上傳作業</h3>
         </div>
         <div class="col-md-2" style="padding-top:25px">
-            <input type="button" class="btn btn-success pull-right" onclick="history.back()" value="回上一頁" >
+            <input type="button" class="btn btn-sm btn-success pull-left" onclick="history.back()" value="回上一頁" >
         </div>
     </div>
     <div class="row col-md-12">
-        <label for="projectId">專案編號:</label>
-        <input type="text" style="background-color:#cccccc;" name="projectid" id="projectid" readonly="readonly" value="@ViewBag.projectid" />
+        <label for="projectId">專案編號:@ViewBag.projectid</label>
+        <input type="hidden"  name="projectid" id="projectid" value="@ViewBag.projectid" />
     </div>
     <div class="row col-md-12" style="padding-top:10px">
-        <label for="projectId">專案名稱:</label>
-        <input type="text" style="background-color:#cccccc;" name="projectname" id="projectname" readonly="readonly" value="@ViewBag.projectName" />
+        <label for="projectId">專案名稱:@ViewBag.projectName</label>
+        <input type="hidden" name="projectname" id="projectname" value="@ViewBag.projectName" />
     </div><br />
     <div class="row col-md-12" style="padding-top:20px">
         <label>工率填寫表連結</label>

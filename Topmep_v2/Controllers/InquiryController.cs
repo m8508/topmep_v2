@@ -423,9 +423,9 @@ namespace topmeperp.Controllers
                         string strAmout = string.Format("{0:C0}", tAmount);
 
                         htmlString = htmlString + "<th><table><tr><td>" + tmpString[0] + '(' + tmpString[2] + ')' +
-                           "<br/><button type='button' class='btn-xs' onclick=\"clickSupplier('" + tmpString[1] + "','" + iswage + "')\"><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></button>" +
-                            "<button type='button' class='btn-xs'><a href='/Inquiry/SinglePrjForm/" + tmpString[1] + "'" + " target='_blank'><span class='glyphicon glyphicon-list-alt' aria-hidden='true'></span></a></button>" +
-                            "<button type='button' class='btn-xs' onclick=\"chaneFormStatus('" + tmpString[1] + "','註銷')\"><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></button>" +
+                           "<br/><button type='button' class='btn btn-xs' onclick=\"clickSupplier('" + tmpString[1] + "','" + iswage + "')\"><span class='fas fa-check'></span></button>" +
+                            "<button type='button' class='btn btn-xs'><a href='/Inquiry/SinglePrjForm/" + tmpString[1] + "'" + " target='_blank'><span class='fas fa-tasks' aria-hidden='true'></span></a></button>" +
+                            "<button type='button' class='btn btn-xs' onclick=\"chaneFormStatus('" + tmpString[1] + "','註銷')\"><span class='fas fa-times' aria-hidden='true'></span></a></button>" +
                             "</td><tr><td style='text-align:center;background-color:yellow;' >" + strAmout + "</td></tr></table></th>";
                     }
                     htmlString = htmlString + "</tr>";
@@ -495,9 +495,9 @@ namespace topmeperp.Controllers
                         string strAmout = string.Format("{0:C0}", tAmount);
 
                         htmlString = htmlString + "<th><table><tr><td>" + tmpString[0] + '(' + tmpString[2] + ')' +
-                            "<br/><button type='button' class='btn-xs' onclick=\"clickSupplier('" + tmpString[1] + "','" + iswage + "')\"><span class='glyphicon glyphicon-ok' aria-hidden='true'></span></button>" +
-                            "<button type='button' class='btn-xs'><a href='/Inquiry/SinglePrjForm/" + tmpString[1] + "'" + " target='_blank'><span class='glyphicon glyphicon-list-alt' aria-hidden='true'></span></a></button>" +
-                            "<button type='button' class='btn-xs' onclick=\"chaneFormStatus('" + tmpString[1] + "','註銷')\"><span class='glyphicon glyphicon-remove' aria-hidden='true'></span></a></button>" +
+                            "<br/><button type='button' class='btn btn-xs' onclick=\"clickSupplier('" + tmpString[1] + "','" + iswage + "')\"><span class='fas fa-check'></span></button>" +
+                            "<button type='button' class='btn btn-xs'><a href='/Inquiry/SinglePrjForm/" + tmpString[1] + "'" + " target='_blank'><span class='fas fa-tasks'></span></a></button>" +
+                            "<button type='button' class='btn btn-xs' onclick=\"chaneFormStatus('" + tmpString[1] + "','註銷')\"><span class='fas fa-times'></span></a></button>" +
                             "</td><tr><td style='text-align:center;background-color:yellow;' >" + strAmout + "</td></tr></table></th>";
                     }
                     htmlString = htmlString + "</tr>";
@@ -526,7 +526,7 @@ namespace topmeperp.Controllers
                         {
                             if (dr[i].ToString() != "")
                             {
-                                htmlString = htmlString + "<td><button class='btn-link' onclick=\"clickPrice('" + dr[1] + "', '" + dr[i] + "','" + iswage + "')\">" + String.Format("{0:N0}", (decimal)dr[i]) + "</button> </td>";
+                                htmlString = htmlString + "<td><button class='btn btn-link' onclick=\"clickPrice('" + dr[1] + "', '" + dr[i] + "','" + iswage + "')\">" + String.Format("{0:N0}", (decimal)dr[i]) + "</button> </td>";
                             }
                             else
                             {

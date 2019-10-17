@@ -35,17 +35,44 @@
 </div>
 
 <div class="container">
-    <ul class="nav nav-tabs">
-        <li class="active"><a data-toggle="tab" href="#inquiry">廠商報價單</a></li>
-        <li><a data-toggle="tab" href="#inquiryTemplate">空白詢價單</a></li>
-    </ul>
-    <div class="tab-content">
-        <div id="inquiry" class="tab-pane fade in active">
+    <div class="row">
+        <div class="card border-left-info shadow h-50 py-2 col-sm-4" >
+            <div class="card-body" id="card_1">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            <button class="btn btn-sm btn-link" onclick="changeSelTab('card_1')">廠商報價單</button>
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card border-left-info shadow h-50 py-2 col-sm-4">
+            <div class="card-body"  id="card_2">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            <button class="btn btn-sm btn-link" onclick="changeSelTab('card_2')">空白詢價單</button>                           
+                        </div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-clipboard-list fa-x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="inquiry" class="ShowTabBody">
             @{
                 Html.RenderPartial("_InquirySupplierPage");
             }
         </div>
-        <div id="inquiryTemplate" class="tab-pane fade">
+        <div id="inquiryTemplate"  class="HiddenTabBody" >
             @{
                 Html.RenderPartial("_InquiryMainPage");
             }
@@ -61,6 +88,7 @@
         $('#Submit1').click(function () {
             $("#divProcessing").show();
         });
+        $("#card_1").css("backgroundColor", "yellow");
     });
     function createTemplate() {
         var projectid = $("input[id=id]").val();
@@ -80,5 +108,19 @@
                 $("#divProcessing").hide();
             }
         });
+    }
+    function changeSelTab(cardid) {
+        console.log("card id=" + cardid);
+        $(".card-body").css("backgroundColor", "white");
+        $("#" + cardid).css("backgroundColor", "yellow");
+        if (cardid == "card_2") {
+            console.log("card id style=" + cardid);
+            $("#inquiry").attr("class", "HiddenTabBody");
+            $("#inquiryTemplate").attr("class", "ShowTabBody");
+        } else {
+            console.log("card id style=" + cardid);
+            $("#inquiry").attr("class", "ShowTabBody");
+            $("#inquiryTemplate").attr("class", "HiddenTabBody");
+        }
     }
 </script>

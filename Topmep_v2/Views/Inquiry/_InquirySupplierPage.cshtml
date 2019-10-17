@@ -1,18 +1,16 @@
 ﻿<div class="container">
     <div class="row">
         <form id="UploadForm" name="UploadForm" action="/Inquiry/FileUpload" method="post" enctype="multipart/form-data">
-            <div class="col-md-2">
+            <div class="col-md-12">
                 <label for="file">廠商報價單匯入:</label>
                 <input type="hidden" name="projectid" id="projectid" value="@ViewBag.projectid" />
-            </div>
-            <div class="col-md-3"><input type="file" name="file" id="file" /> </div>
-            <div class="col-md-2"> 工資報價:<input type="checkbox" name="isWage" id="isWage" value="Y" /></div>
-            <div class="col-md-3 pull-left">
-                <input id="btnUploadfile" name="btnUploadfile" type="submit" class="btn-primary" value="匯入檔案" />
+                <input type="checkbox" name="isWage" id="isWage" value="Y" />工資報價
+                <input type="file" name="file" id="file" />
+                <input id="btnUploadfile" name="btnUploadfile" type="submit" class="btn btn-sm btn-primary" value="匯入檔案" />
             </div>
         </form>
-
     </div>
+
     @if (null != Model.tndProjectFormFromSupplier)
     {
         <div class="row" style="padding-top:5px;">
