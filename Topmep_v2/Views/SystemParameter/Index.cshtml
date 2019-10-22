@@ -1,26 +1,18 @@
 ﻿@{
     ViewBag.Title = "系統參數管理";
-   
 }
 <!--搜尋條件區域-->
-<div class="jumbotron">
-    <div class="row"><h5>@ViewBag.Title</h5></div>
-    <div class="row form-group">
-        <form name="formSearch" id="formSearch" class="form-inline">
-            <div class="col-md-12">
-                <div class="col-md-3">
-                    功能: @Html.DropDownList("paraFunction", null, String.Empty, new { @class = "form-control" })
-                </div>
-                <div class="col-md-3">
-                    欄位：<select id="paraField" name="paraField" class="form-control"><option>---</option></select>
-                </div>
-                    <div class="col-md-6">
-                        <button type="button" class="btn btn-info" id="btnQuery" name="btnQuery" onclick="getKeyValue()">查詢</button>
-                    </div>
-                </div>
-        </form>
+<h6 class="m-0 font-weight-bold text-primary">@ViewBag.Title</h6>
+<div class="row">
+    <div class="card-header py-3">
+            <h7 class="m-0 font-weight-bold text-primary">請輸入查詢條件</h7>
+            <form name="formSearch" id="formSearch" class="form-inline">
+                功能: @Html.DropDownList("paraFunction", null, String.Empty, new { @class = "form-control" })
+                欄位：<select id="paraField" name="paraField" class="form-control"><option>---</option></select>
+                <button type="button" class="btn btn-sm btn-info" id="btnQuery" name="btnQuery" onclick="getKeyValue()">查詢</button>
+            </form>
     </div>
-    <div class="row body-content">
+    <div class="card-body">
         <form id="formSysPara" name="formSysPara">
             <div id="sysParaArea" name="sysParaArea">
             </div>

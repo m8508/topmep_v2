@@ -98,7 +98,39 @@
     </div>
 
 
+    <!--查詢區塊樣板區--->
+    <div class="row">
+        <div class="card shadow col-12">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">請輸入查詢條件</h6>
+            </div>
+            <div class="card-body">
+                <form name="FormSearchProject" id="FormSearchProject" class="form-inline" action="~/Tender/Search" method="Post">
+                    <div class="col-lg-12 form-group">
+                        <label class="col-form-label col-lg-2" for="textProejctName">專案名稱:</label>
+                        <input class="form-control col-lg-3"
+                               id="textProejctName" name="textProejctName" type="text">
+                        <div class="col-lg-3">
+                            <select id="selProjectStatus" name="selProjectStatus" class="selectpicker form-control">
+                                <option value="備標">備標</option>
+                                <option value="專案執行">專案執行</option>
+                                <option value="保固">保固</option>
+                                <option value="結案">結案</option>
+                            </select>
+                        </div>
+                        <div id="divProcessing">
+                            <img src="~/images/ajax-loader.gif">
+                        </div>
 
+                        <div class="col-lg-4">
+                            <input id="Submit1" type="submit" class="btn btn-info" value="查詢">
+                            <a href="~/Tender/Create" class="btn btn-warning">新增專案</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>

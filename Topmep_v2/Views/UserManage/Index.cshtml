@@ -1,36 +1,32 @@
 ﻿@{
     ViewBag.Title = "使用者帳號管理";
-   
 }
 <!--搜尋條件區域-->
-<div class="jumbotron">
+<div class="card-header py-3">
     <div class="row"><h5>@ViewBag.Title</h5></div>
     <div class="row form-group">
-        <form name="formSearch" id="formSearch">
-            <div class="col-md-12">
-                <div class="col-md-3">
-                    帳號: <input id="userid" name="userid" type="text" class="form-control" />
+
+        <div class="col-md-12">
+            <form name="formSearch" id="formSearch" class="form-inline">
+                帳號: <input id="userid" name="userid" type="text" class="form-control col-sm-2" />
+
+                姓名: <input id="username" name="username" type="text" class="form-control col-sm-2" />
+
+                電話: <input id="tel" name="tel" type="text" class="form-control col-sm-2" />
+
+                角色: @Html.DropDownList("roles", null, String.Empty, new { @class = "form-control" })
+                <button type="button" class="btn btn-sm btn-info" id="btnQuery" name="btnQuery">查詢</button>
+                <div id="divProcessing">
+                    <img src="~/Content/ajax-loader.gif">
                 </div>
-                <div class="col-md-3">
-                    姓名: <input id="username" name="username" type="text" class="form-control" />
-                </div>
-                <div class="col-md-3">
-                    電話: <input id="tel" name="tel" type="text" class="form-control" />
-                </div>
-                <div class="col-md-3">
-                    角色: @Html.DropDownList("roles", null, String.Empty, new { @class = "form-control" })
-                </div>
-            </div>
+                <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#userInfo" onclick="clearDialog()">新增使用者</button>
+        </div>
         </form>
     </div>
 
     <div class="row" style="padding-top:10px;">
         <div class="col-md-12">
-            <button class="btn btn-info" id="btnQuery" name="btnQuery">查詢</button>
-            <div id="divProcessing">
-                <img src="~/Content/ajax-loader.gif">
-            </div>
-            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#userInfo" onclick="clearDialog()">新增使用者</button>
+
         </div>
     </div>
     <!-- Modal :對話框-->
@@ -42,7 +38,7 @@
     </div>
 </div>
 <!--帳號資料清單，透過AJAX 更新相關頁面資料-->
-<div class="container">
+<div class="card-body">
     <div id="userList" name="userList">
     </div>
 </div>
