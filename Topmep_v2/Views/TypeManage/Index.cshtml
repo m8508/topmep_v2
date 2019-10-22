@@ -1,57 +1,62 @@
-﻿@model IEnumerable<topmeperp.Models.REF_TYPE_MAIN>
+﻿@model IEnumerable<Topmep.Models.REF_TYPE_MAIN>
 @{
     ViewBag.Title = "九宮格/次九宮格管理";
-    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+
 }
 <!--搜尋條件區域-->
-<div class="jumbotron">
-    <div class="row"><h5>@ViewBag.Title</h5></div>
-</div>
+<style>
+
+    table {
+        table-layout: fixed;
+        word-wrap: break-word;
+    }
+</style>
+<div class="row"><h5>@ViewBag.Title</h5></div>
+
 <!--九宮格資料區塊-->
 @{
     string curType1 = "";
     string rowHTML = "";
 }
-<div class="container">
-    <div class="row">
-        <h5>九宮格</h5>
-        <table class="table">
-            <tr>
-                <td class="bg-primary"></td>
-                <td class="bg-primary" style="width:50px">第一階</td>
-                @{
-                    for (int i = 0; i < 10; i++)
-                    {
-                        rowHTML = rowHTML + "<td class='bg-primary'>" + i + "</td>";
-                    }
-                    @Html.Raw(rowHTML);
-                }
-            </tr>
-            @foreach (var item in Model)
-            {
-                if (curType1 != item.TYPE_CODE_1)
+<div class="container overflow-auto">
+    <h5>九宮格</h5>
+    <table class="table table-bordered dataTable">
+        <tr>
+            <td></td>
+            <td><label class="text-info">第一階</label></td>
+            @{
+                for (int i = 0; i < 10; i++)
                 {
-                    if (curType1 != "")
-                    {
-                        @Html.Raw(rowHTML + "</tr>");
-                    }
-                    rowHTML = "<tr><td class='bg-primary'> " + item.TYPE_CODE_1 + "</td><td class='bg-primary'>" + item.CODE_1_DESC + "</td>" +
-                         "<td style='padding:2px'>" +
-                         "<input type='button' class='btn-link btn-xs' onclick=\"selectType('" + item.TYPE_CODE_1 + "','" + item.TYPE_CODE_2 + "')\" value='" + item.TYPE_DESC + "'/>" +
-                         "<a href=\"EditMainType?typecode1=" + item.TYPE_CODE_1 + "&typecode2=" + item.TYPE_CODE_2 + "\"><span class=\"glyphicon glyphicon-pencil\"></span></a></td>"; 
-                    curType1 = item.TYPE_CODE_1;
+                    rowHTML = rowHTML + "<td>" + i + "</td>";
                 }
-                else
-                {
-                    //  @ViewBag.Typecode = "<a href =\"EditMainType?typecode1=" + typecod1 + "&typecode2=" + typecod2 + "\">編輯</a>";
-                    rowHTML = rowHTML + "<td style='padding:2px'>" +
-                         "<input type='button' class='btn-link btn-xs' onclick=\"selectType('" + item.TYPE_CODE_1 + "','" + item.TYPE_CODE_2 + "')\" value='" + item.TYPE_DESC + "'/>" +
-                         "<a href=\"EditMainType?typecode1=" + item.TYPE_CODE_1 + "&typecode2=" + item.TYPE_CODE_2 + "\"><span class=\"glyphicon glyphicon-pencil\"></span></a></td>";
-                }
+                @Html.Raw(rowHTML);
             }
-            @Html.Raw(rowHTML + "</tr>")
-        </table>
-    </div>
+        </tr>
+        @foreach (var item in Model)
+        {
+            if (curType1 != item.TYPE_CODE_1)
+            {
+                if (curType1 != "")
+                {
+                    @Html.Raw(rowHTML + "</tr>");
+                }
+                rowHTML = "<tr><td> " + item.TYPE_CODE_1 + "</td><td>" + item.CODE_1_DESC + "</td>" +
+                     "<td>" +
+                     "<lable class='btn-link' onclick=\"selectType('" + item.TYPE_CODE_1 + "','" + item.TYPE_CODE_2 + "')\">" + item.TYPE_DESC + "</lable>" +
+                     "</td>";
+
+                curType1 = item.TYPE_CODE_1;
+            }
+            else
+            {
+                //  @ViewBag.Typecode = "<a href =\"EditMainType?typecode1=" + typecod1 + "&typecode2=" + typecod2 + "\">編輯</a>";
+                rowHTML = rowHTML + "<td>" +
+          "<lable class='btn-link' onclick=\"selectType('" + item.TYPE_CODE_1 + "','" + item.TYPE_CODE_2 + "')\">" + item.TYPE_DESC + "</lable>" +
+                     "</td>";
+            }
+        }
+        @Html.Raw(rowHTML + "</tr>")
+    </table>
 </div>
 <!--次九宮格資料區塊-->
 <div class="container">
@@ -69,6 +74,9 @@
             dataType: "HTML",
             success: function (result) {
                 $("#subTypeArea").html(result);
+                $('html, body').animate({
+                    scrollTop: $("#subTypeArea").offset().top
+                }, 200);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert('Error get data from ajax(' + errorThrown + ')');

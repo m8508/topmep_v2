@@ -1,8 +1,8 @@
-﻿@model IEnumerable<topmeperp.Models.RePaymentFunction>
+﻿@model IEnumerable<Topmep.Models.RePaymentFunction>
 
 @{
     ViewBag.Title = "代付支出-選商 : ";
-    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+   
 }
 @using (Html.BeginForm("AddRePayment", "Estimation", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {

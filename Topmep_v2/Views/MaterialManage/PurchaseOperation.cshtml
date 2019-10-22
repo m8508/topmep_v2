@@ -1,8 +1,8 @@
-﻿@model IEnumerable<topmeperp.Models.PurchaseRequisition>
+﻿@model IEnumerable<Topmep.Models.PurchaseRequisition>
 
 @{
     ViewBag.Title = "採購作業:建立採購單";
-    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+   
 }
 @using (Html.BeginForm("AddPO", "MaterialManage", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { enctype = "multipart/form-data" }))
 {

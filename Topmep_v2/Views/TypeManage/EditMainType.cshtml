@@ -1,12 +1,12 @@
-﻿@model topmeperp.Models.TyepManageModel
+﻿@model Topmep.Models.TyepManageModel
 @{
     ViewBag.Title = "九宮格資料維護";
-    Layout = "~/Views/Shared/_MenuLayout.cshtml";
+   
 }
 <!--九宮格基本資料區塊-->
 @using (Html.BeginForm("EditMainType", "TypeManage", FormMethod.Post))
 {
-    <div class="jumbotron">
+    <div class="container">
         <div class="row"><h5>@ViewBag.Title</h5></div>
         <div class="row">
             <div class="col-md-2">九宮格第1碼</div><div class="col-md-2">
@@ -14,7 +14,7 @@
                 @Html.HiddenFor(m => m.MainType.TYPE_CODE_ID, new { @class = "form-control", @readonly = "true" })
             </div>
             <div class="col-md-2">名稱</div><div class="col-md-6">
-                @Html.TextBoxFor(m => m.MainType.CODE_1_DESC)
+                @Html.TextBoxFor(m => m.MainType.CODE_1_DESC, new { @class = "form-control" })
             </div>
         </div>
         <div class="row">
@@ -23,11 +23,11 @@
                 @Html.TextBoxFor(m => m.MainType.TYPE_CODE_2, new { @class = "form-control", @readonly = "true" })
             </div>
             <div class="col-md-2">名稱</div><div class="col-md-6">
-                @Html.TextBoxFor(m => m.MainType.TYPE_DESC)
+                @Html.TextBoxFor(m => m.MainType.TYPE_DESC, new { @class = "form-control"})
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container" style="padding-top:5px">
         <!--次九宮格基本資料區塊-->
         <table class="table" id="tableSubType" name="tableSubType">
             <tr>
@@ -54,26 +54,26 @@
                         @Html.TextBoxFor(modelItem => item.TYPE_CODE_ID, new { @class = "form-control", @readonly = "true" })
                     </td>
                     <td>
-                        @Html.TextBoxFor(modelItem => item.SUB_TYPE_CODE)
+                        @Html.TextBoxFor(modelItem => item.SUB_TYPE_CODE, new { @class = "form-control" })
                     </td>
                     <td>
-                        @Html.TextBoxFor(modelItem => item.TYPE_DESC)
+                        @Html.TextBoxFor(modelItem => item.TYPE_DESC, new { @class = "form-control" })
                     </td>
                 </tr>
             }
         </table>
         <div class="row">
             <div class="col-md-1">
-                <input type="button" id="addButton" class="btn btn-warning" value="新增" onclick="addRow()" />
+                <input type="button" id="addButton" class="btn btn-sm btn-warning" value="新增" onclick="addRow()" />
             </div>
             <div class="col-md-1">
-                <input type="button" id="addButton" class="btn btn-danger" value="刪除" onclick="removeRow()" />
+                <input type="button" id="addButton" class="btn btn-sm btn-danger" value="刪除" onclick="removeRow()" />
             </div>
             <div class="col-md-1">
-                <input type="submit" id="submit" class="btn btn-info" value="儲存" />
+                <input type="submit" id="submit" class="btn btn-sm btn-info" value="儲存" />
             </div>
             <div class="col-md-1">
-                <a href="Index" class="btn btn-success">返回</a>
+                <a href="Index" id="back" class="btn btn-sm btn-success">返回</a>
             </div>
         </div>
     </div>
