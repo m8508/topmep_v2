@@ -1,7 +1,7 @@
 ﻿@model  Topmep.Models.UserManageModels
 
 @ViewBag.SearchResult
-<table class="table">
+<table class="table table-bordered dataTable">
     <tr>
         <th></th>
         <th>
@@ -34,9 +34,15 @@
     {
         <tr>
             <td>
+
                 @{
-                    <a onclick="getUser('@item.USER_ID')">修改</a>
+                    <a class="nav-item nav-link collapsed"  aria-expanded="true" aria-controls="collapsePages" onclick="getUser('@item.USER_ID')">
+                        <i class="fas fa-fw fa-cog">
+                            <span>修改</span>
+                        </i>
+                    </a>
                 }
+
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.USER_ID)
@@ -51,7 +57,7 @@
                 @Html.DisplayFor(modelItem => item.TEL) - @Html.DisplayFor(modelItem => item.TEL_EXT)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FAX) 
+                @Html.DisplayFor(modelItem => item.FAX)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.MOBILE)
@@ -63,5 +69,5 @@
                 @Html.DisplayFor(modelItem => item.MODIFY_DATE)
             </td>
         </tr>
-                    }
+    }
 </table>
