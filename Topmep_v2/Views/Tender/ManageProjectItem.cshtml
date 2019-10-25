@@ -53,7 +53,7 @@
         </form>
     </div>
 </div>
-<div class="container" id="comparisonData" >
+<div class="row" id="comparisonData" >
 </div>
 <!-- Modal :對話框-->
 <div class="modal fade" id="projectItem" role="dialog">
@@ -123,6 +123,7 @@
             dataType: "text",
             success: function (data) {
                 alert(data);
+                getComparisonData();
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert('Error del data bys ajax');
@@ -210,6 +211,7 @@
             dataType: 'text',
             success: function (msg) {
                 alert(msg);
+                getComparisonData();
             },
             error: function (xhr, ajaxOptions, thrownError) {
                 alert(thrownError);

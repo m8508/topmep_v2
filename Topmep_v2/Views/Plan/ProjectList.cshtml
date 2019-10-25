@@ -40,14 +40,14 @@
             <td colspan="5">
                 <div class="row">
                     <div class="col-md-3 hidden-xs">
-                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "ProjectPlan", new { projectid = item.PROJECT_ID ,roottag="Y"})'">Project匯入與設定</button>
-                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("ManageTaskDetail", "ProjectPlan", new { projectid = item.PROJECT_ID})'">任務項目管理</button>
+                        <button type="button" class="btn btn-sm btn-primary" onclick="location.href='@Url.Action("Index", "ProjectPlan", new { projectid = item.PROJECT_ID ,roottag="Y"})'">Project匯入與設定</button>
+                        <button type="button" class="btn btn-sm btn-primary" onclick="location.href='@Url.Action("ManageTaskDetail", "ProjectPlan", new { projectid = item.PROJECT_ID})'">任務項目管理</button>
 
                     </div>
                     <div class="col-md-3">
-                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("PurchaseRequisition","MaterialManage", new { id = @Html.DisplayFor(modelItem => item.PROJECT_ID)})'; ">申購</button>
-                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("PurchaseOrderIndex","MaterialManage", new { id = @Html.DisplayFor(modelItem => item.PROJECT_ID)})'; ">驗收</button>
-                        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("InventoryIndex","MaterialManage", new { id = @Html.DisplayFor(modelItem => item.PROJECT_ID)})'; ">庫存查詢</button>
+                        <button type="button" class="btn btn-sm btn-primary" onclick="location.href='@Url.Action("PurchaseRequisition","MaterialManage", new { id = @Html.DisplayFor(modelItem => item.PROJECT_ID)})'; ">申購</button>
+                        <button type="button" class="btn btn-sm btn-primary" onclick="location.href='@Url.Action("PurchaseOrderIndex","MaterialManage", new { id = @Html.DisplayFor(modelItem => item.PROJECT_ID)})'; ">驗收</button>
+                        <button type="button" class="btn btn-sm btn-primary" onclick="location.href='@Url.Action("InventoryIndex","MaterialManage", new { id = @Html.DisplayFor(modelItem => item.PROJECT_ID)})'; ">庫存查詢</button>
                     </div>   <div class="col-md-3">
                         <!--<button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("ReceiptSearch","MaterialManage", new { id = @Html.DisplayFor(modelItem => item.PROJECT_ID)})'; ">驗收單領料</button>-->
                         <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("DeliveryIndex","MaterialManage", new { id = @Html.DisplayFor(modelItem => item.PROJECT_ID)})'; ">領料</button>

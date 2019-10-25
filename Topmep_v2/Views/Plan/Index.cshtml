@@ -3,14 +3,12 @@
    
 }
 <!--專案執行表頭-->
-<div class="container">
-    <h1 style="padding-top:10px;">專案執行主頁 : </h1>
-</div>
+<h6 class="m-0 font-weight-bold text-primary">@ViewBag.Title</h6>
 <!--專案列表區域-->
 <div class="container">
     @ViewBag.SearchResult
     <div class="row">
-        <div class="col-md-12 col-sm-6">
+        <div class="col-md-12">
             @if (null != Model)
             {
                 Html.RenderPartial("ProjectList");

@@ -742,7 +742,7 @@ namespace topmeperp.Controllers
         public String delProjectItem(string itemid)
         {
             InquiryFormService service = new InquiryFormService();
-            string msg = "更新成功!!";
+            string msg = "刪除成功!!";
             log.Info("del project item by id=" + itemid);
             int i = service.changeProjectItem(itemid, "Y");
             return msg + "(" + i + ")";

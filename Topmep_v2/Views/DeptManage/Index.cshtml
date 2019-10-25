@@ -1,35 +1,31 @@
 ﻿@{
     ViewBag.Title = "部門資料管理";
-   
 }
 <link href="../../Content/bootstrap-treeview.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="../../Scripts/bootstrap-treeview.js"></script>
 <!--搜尋條件區域-->
-<div class="jumbotron">
+<h6 class="m-0 font-weight-bold text-primary">@ViewBag.Title</h6>
+<div class="card-header py-3">
     <div class="row form-group">
         <form name="formSearch" id="formSearch" class="form-inline">
-            <div class="col-md-12">
-                    <label for="deptName">部門名稱:</label>
-                    <input id="deptName" name="deptName" type="text" class="form-control" />
-                    <!--<button class="btn btn-info" id="btnQuery" name="btnQuery">查詢</button>-->
-                    <div id="divProcessing">
-                        <img src="~/Content/ajax-loader.gif">
-                    </div>
-                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#deptInfo" onclick="clearDialog()">新增</button>
-                </div>
+            <label for="deptName">部門名稱:</label>
+            <input id="deptName" name="deptName" type="text" class="form-control" />
+            <!--<button class="btn btn-info" id="btnQuery" name="btnQuery">查詢</button>-->
+            <div id="divProcessing">
+                <img src="~/Content/ajax-loader.gif">
+            </div>
+            <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#deptInfo" onclick="clearDialog()">新增</button>
         </form>
     </div>
-
-    <!-- Modal :對話框-->
-    <div class="modal fade" id="deptInfo" role="dialog">
-        <div class="modal-dialog" id="deptInfoDialog">
-            <!-- Modal content-->
-            @Html.Partial("_Dept");
-        </div>
+</div>
+<!-- Modal :對話框-->
+<div class="modal fade" id="deptInfo" role="dialog">
+    <div class="modal-dialog" id="deptInfoDialog">
+        <!-- Modal content-->
+        @Html.Partial("_Dept");
     </div>
 </div>
 <!--帳號資料清單，透過AJAX 更新相關頁面資料-->
-
 <!--樹狀圖區塊-->
 
 <div class="col-md-12">
@@ -104,7 +100,7 @@
         });
     });
 
-    
+
     // Hide the "busy" Gif at load:
     $("#divProcessing").hide();
 

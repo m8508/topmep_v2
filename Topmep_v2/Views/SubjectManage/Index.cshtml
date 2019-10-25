@@ -1,41 +1,37 @@
 ﻿@{
-    ViewBag.Title = "財務科目管理";
-   
+    ViewBag.Title = "會計科目管理";
 }
 <!--搜尋條件區域-->
-<div class="jumbotron">
-    <div class="row">
-        <h4>@ViewBag.Title</h4>
+<h6 class="m-0 font-weight-bold text-primary">@ViewBag.Title</h6>
+
+<div class="row">
+    <div class="card-header py-3">
         <div class="col-md-12">
-            <form name="FormSearchSubject" id="FormSearchSubject" action="Search" method="Post">
-                <div class="col-md-12">
-                    <div class="col-md-4">
-                        項目名稱:<input class="form-control" id="SubjectName" name="SubjectName" type="text" />
-                    </div>
-                    <div class="col-md-4">
-                        項目類別:@Html.DropDownList("categorys", null, String.Empty, new { @class = "form-control" })
-                    </div>
-                    <div class="col-md-1 pull-right" style="padding-top : 17px">
-                        <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#subjectItem" onclick="clearDialog()">新增科目</button>
-                    </div>
-                    <div class="col-md-2 pull-right" style="padding-top : 17px">
-                        <div id="divProcessing">
-                            <img src="~/Content/ajax-loader.gif">
-                        </div>
-                        <input id="Submit1" type="submit" class="btn btn-info" value="查詢" />
-                    </div>
+            <form name="FormSearchSubject" id="FormSearchSubject" action="Search" method="Post" class="form-inline">
+
+                項目名稱:<input class="form-control" id="SubjectName" name="SubjectName" type="text" />
+
+                項目類別:@Html.DropDownList("categorys", null, String.Empty, new { @class = "form-control" })
+
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#subjectItem" onclick="clearDialog()">新增科目</button>
+
+                <div id="divProcessing">
+                    <img src="~/Content/ajax-loader.gif">
                 </div>
+                <input id="Submit1" type="submit" class="btn btn-info" value="查詢" />
+
             </form>
         </div>
     </div>
 </div>
+
 <!--財務科目基本資料區域-->
-<div class="container-fluid">
+<div class="card-body container-fluid">
     @ViewBag.SearchResult
     @if (null != Model)
-            {
-                Html.RenderPartial("_SubjectList");
-            }
+    {
+        Html.RenderPartial("_SubjectList");
+    }
 </div>
 <!-- Modal :對話框-->
 <div class="row" style="padding-top:10px;">

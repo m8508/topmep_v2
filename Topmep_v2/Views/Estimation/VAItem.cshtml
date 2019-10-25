@@ -1,13 +1,11 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "計價資料 : ";
-   
 }
 <script src="~/Scripts/angular.js"></script>
 
 <div class="page-header">
-    <h3 style="height:10px;line-height:5px">@ViewBag.Title</h3>
-    
+    <h5 style="height:10px;line-height:5px">@ViewBag.Title</h5>
+
     <div class="row">
         <div class="col-md-1" style="padding-bottom:15px;">
             <input type="button" class="btn btn-success" onclick="location.href='@Url.Action("Valuation4Owner", "Estimation", new { id = ViewBag.projectId })'" value="回上一頁">
@@ -17,21 +15,23 @@
         </div>
         @if (ViewBag.NotePieces > 0)
         {
-        <div class="col-md-1" style="padding-bottom:15px">
-            <a class="btn btn-link" href="/Estimation/downLoadCreditNote?projectid=@ViewBag.projectId&formid=@ViewBag.formid" target="_blank">下載折讓單</a>
-        </div>
+            <div class="col-md-1" style="padding-bottom:15px">
+                <a class="btn btn-link" href="/Estimation/downLoadCreditNote?projectid=@ViewBag.projectId&formid=@ViewBag.formid" target="_blank">下載折讓單</a>
+            </div>
         }
     </div>
     <div ng-app="" ng-controller="MyCtrl">
         <div class="row" style="padding-bottom:30px">
-            <div class="col-md-3">
-                <label for="projectName">專案名稱:</label><input id="projectName" name="projectName" type="text" value="@ViewBag.projectName" class="form-control" style="background-color:#cccccc;" readonly="readonly" />
-            </div>
-            <div class="col-md-3">
-                <label for="supplier">業主名稱:</label><input id="supplier" name="supplier" type="text" value="@ViewBag.supplier" class="form-control" style="background-color:#cccccc;" readonly="readonly" />
-            </div>
+
         </div>
-        <form id="invoice_form" name="invoice_form" ng-submit="submit()" action="/Estimation/updateVAItem" method="post" enctype="multipart/form-data">
+        <form id="invoice_form" name="invoice_form" ng-submit="submit()" action="/Estimation/updateVAItem" method="post" enctype="multipart/form-data" class="form-inline">
+
+            <label for="projectName">專案名稱:</label>
+            <input id="projectName" name="projectName" type="text" value="@ViewBag.projectName" class="form-control" style="background-color:#cccccc;" readonly="readonly" />
+
+            <label for="supplier">業主名稱:</label>
+            <input id="supplier" name="supplier" type="text" value="@ViewBag.supplier" class="form-control" style="background-color:#cccccc;" readonly="readonly" />
+            
             <label for="advance_payment" class="col-md-2 control-label">預收款(未稅) :</label>
             <div class="col-md-4" style="padding-top:2px">
                 @if (ViewBag.advance != null)
@@ -129,10 +129,14 @@
                     <br />
                     憑證類型 :
                     <select style="color:deeppink;font-weight:bold; width:120px" id="invoicetype" name="invoicetype" ng-model="key.TYPE" required>
-                    <option value="二聯式">二聯式</option>
-                    <option value="三聯式">三聯式</option>
-                    <option value="收據">收據</option>
-                    <option value="工資單">工資單</option><option value="對開發票">對開發票</option><option value="折讓單">折讓單</option><option value="其他扣款">其他扣款</option></select>
+                        <option value="二聯式">二聯式</option>
+                        <option value="三聯式">三聯式</option>
+                        <option value="收據">收據</option>
+                        <option value="工資單">工資單</option>
+                        <option value="對開發票">對開發票</option>
+                        <option value="折讓單">折讓單</option>
+                        <option value="其他扣款">其他扣款</option>
+                    </select>
                     <span ng-show="key.TYPE == '折讓單'">
                         <select style="color:cornflowerblue;font-weight:bold; width:120px" id="sub_type" name="sub_type" ng-model="key.SUB_TYPE" required><option value="溢開折讓">溢開折讓</option><option value="扣款折讓">扣款折讓</option><option value="代收代付">代收代付</option></select>
                         品名 :

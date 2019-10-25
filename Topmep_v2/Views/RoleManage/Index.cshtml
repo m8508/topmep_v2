@@ -1,31 +1,37 @@
 ﻿@{
     ViewBag.Title = "權限設定";
-   
 }
-<div class="jumbotron">
-    <form name="formRole" id="formRole" method="Post">
-        <div class="row form-group">
-            <label class="col-md-1">角色:</label>
-            <div class="col-md-3">
+<h6 class="m-0 font-weight-bold text-primary">@ViewBag.Title</h6>
+<div class="row">
+    <div class="card-header py-3">
+        <form name="formRole" id="formRole" method="Post" class="form-inline">
+            <div class="row form-group">
+                <label>角色:</label>
                 @Html.DropDownList("roles", null, String.Empty, new { @class = "form-control", @onchange = "selectRole(this.value)" })
-            </div>
-            <div class="col-md-3"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#roleId">新增角色</button></div>
-            <div id="divProcessing" class="col-md-2">
-                <img src="~/Content/ajax-loader.gif">
-            </div>
+                <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#roleId">新增角色</button>
+                <div id="divProcessing">
+                    <img src="~/Content/ajax-loader.gif">
+                </div>
 
+            </div>
+        </form>
+    </div>
+    <div class="card-body container">
+        <div class="row">
+            <button class="btn btn-sm btn-primary" onclick="updatePrivilegr()">送出</button>
         </div>
-    </form>
-</div>
-<div class="row body-content">
-    <button class="btn-default" onclick="updatePrivilegr()">送出</button>
-    <form id="formPrivilege" name="formPrivilege">
-        <input type="hidden" id="roleid" name="roleid" value="" />
-        <div id="privilegeArea" name="privilegeArea">
-            @Html.Partial("FunctionList")
+        <div class="row">
+            <form id="formPrivilege" name="formPrivilege">
+                <input type="hidden" id="roleid" name="roleid" value="" />
+                <div id="privilegeArea" name="privilegeArea">
+                    @Html.Partial("FunctionList")
+                </div>
+            </form>
         </div>
-    </form>
-    <button class="btn-default" onclick="updatePrivilegr()">送出</button>
+        <div class="row">
+            <button class="btn btn-sm btn-primary" onclick="updatePrivilegr()">送出</button>
+        </div>
+    </div>
 </div>
 
 <!-- Modal :對話框-->
