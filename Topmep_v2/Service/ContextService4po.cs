@@ -401,7 +401,7 @@ namespace Topmep.Service
                 //取得專案檔頭資訊
                 wageTable = context.TND_PROJECT.SqlQuery("SELECT * FROM TND_PROJECT WHERE PROJECT_ID=@projectid", new SqlParameter("projectid", projectid)).First();
                 //取得合約標單明細
-                string sql = @"SELECT i.PLAN_ITEM_ID PROJECT_ITEM_ID,i.PROJECT_ID,i.ITEM_ID ,i.ITEM_DESC,i.ITEM_UNIT,i.ITEM_QUANTITY,i.ITEM_UNIT_PRICE
+                string sql = @"SELECT DISTINCT i.PLAN_ITEM_ID PROJECT_ITEM_ID,i.PROJECT_ID,i.ITEM_ID ,i.ITEM_DESC,i.ITEM_UNIT,i.ITEM_QUANTITY,i.ITEM_UNIT_PRICE
                    ,i.MAN_PRICE ,i.ITEM_REMARK  ,i.TYPE_CODE_1 ,i.TYPE_CODE_2 ,i.SUB_TYPE_CODE  ,i.SYSTEM_MAIN ,i.SYSTEM_SUB
                    ,i.MODIFY_USER_ID  ,i.MODIFY_DATE ,i.CREATE_USER_ID   ,i.CREATE_DATE  ,i.EXCEL_ROW_ID  ,i.FORM_NAME  ,i.SUPPLIER_ID
                    ,i.BUDGET_RATIO  ,i.ITEM_FORM_QUANTITY   ,i.ITEM_UNIT_COST ,i.TND_RATIO

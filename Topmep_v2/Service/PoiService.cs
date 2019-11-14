@@ -1750,7 +1750,7 @@ namespace Topmep.Service
 
             //3.填入表單明細
             int idxRow = 4;
-            foreach (TND_PROJECT_ITEM item in projectItems)
+            foreach (PROJECT_ITEM_WITH_WAGE item in projectItems)
             {
                 IRow row = sheet.CreateRow(idxRow);//.GetRow(idxRow);
                 //PK(PROJECT_ITEM_ID) 項次 名稱 單位 數量 單價 備註 九宮格 次九宮格 主系統 次系統
@@ -2748,7 +2748,7 @@ namespace Topmep.Service
                 }
                 //材料成本 與預算折扣率
                 row.CreateCell(4).SetCellValue("");
-                if (null != item.MATERIAL_COST && item.MATERIAL_COST.ToString().Trim() != "")
+                if (null != item.MATERIAL_COST_INMAP && item.MATERIAL_COST_INMAP.ToString().Trim() != "")
                 {
                     row.Cells[4].SetCellValue(double.Parse(item.MATERIAL_COST_INMAP.ToString()));
                     row.Cells[4].CellStyle = styleNumber;
